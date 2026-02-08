@@ -131,6 +131,7 @@
             btnGitHub.Size = new Size(36, 31);
             btnGitHub.TabIndex = 14;
             btnGitHub.UseVisualStyleBackColor = false;
+            btnGitHub.Click += btnGitHub_Click;
             // 
             // btnExportToWord
             // 

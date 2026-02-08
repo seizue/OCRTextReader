@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace OCRTextReader
 {
@@ -19,7 +20,7 @@ namespace OCRTextReader
         {
             InitializeComponent();
             txtExtractedText.SelectionStart = txtExtractedText.Text.Length;
-            
+
             // Initialize button states
             btnProcessOCR.Enabled = false;
             btnExportToWord.Enabled = false;
@@ -102,7 +103,7 @@ namespace OCRTextReader
                 {
                     string fileTypeName = extension == ".xls" ? "Excel" : "PowerPoint";
                     string newFormat = extension == ".xls" ? ".xlsx" : ".pptx";
-                    
+
                     MessageBox.Show(
                         $"Legacy {extension.ToUpperInvariant()} format is not supported.\n\n" +
                         $"To extract text from this file, please:\n" +
@@ -113,7 +114,7 @@ namespace OCRTextReader
                         "Unsupported File Format",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    
+
                     lblStatus.Text = $"Legacy {extension.ToUpperInvariant()} format not supported. Please convert to {newFormat.ToUpperInvariant()}.";
                     lblStatus.ForeColor = Color.Orange;
                     return;
@@ -144,7 +145,7 @@ namespace OCRTextReader
             {
                 string errorTitle = "Extraction Error";
                 string errorMessage;
-                
+
                 if (extension is ".pdf" or ".xlsx" or ".pptx")
                 {
                     errorMessage = $"An error occurred while extracting text from the {fileType} document.\n\nDetails: {ex.Message}";
@@ -225,6 +226,17 @@ namespace OCRTextReader
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGitHub_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/seizue/OCRTextReader";
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
         }
     }
 }
