@@ -225,7 +225,7 @@ namespace OCRTextReader
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnGitHub_Click(object sender, EventArgs e)

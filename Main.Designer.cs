@@ -1,4 +1,7 @@
-﻿namespace OCRTextReader
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace OCRTextReader
 {
     partial class Main
     {
@@ -29,394 +32,398 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            nightForm1 = new ReaLTaiizor.Forms.NightForm();
-            btnSelectDocOrImage = new Button();
-            txtExtractedText = new RichTextBox();
-            btnGitHub = new Button();
-            btnExportToWord = new ReaLTaiizor.Controls.HopeButton();
-            btnProcessOCR = new ReaLTaiizor.Controls.HopeButton();
-            lblStatus = new ReaLTaiizor.Controls.HopeTextBox();
-            pictureBox = new ReaLTaiizor.Controls.HopePictureBox();
-            btnClearSelection = new Button();
-            txtExtractedTextBackground = new ReaLTaiizor.Controls.HopeTextBox();
-            lblImagePath = new ReaLTaiizor.Controls.HopeTextBox();
-            panel1 = new Panel();
-            label2 = new Label();
-            label1 = new Label();
-            panel2 = new Panel();
-            hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
-            parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
-            btnMinimize = new Button();
-            btnClose = new Button();
-            openFileDialog = new OpenFileDialog();
-            saveFileDialog = new SaveFileDialog();
-            nightForm1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)hopePictureBox1).BeginInit();
-            SuspendLayout();
+            this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+            this.btnSelectDocOrImage = new System.Windows.Forms.Button();
+            this.txtExtractedText = new System.Windows.Forms.RichTextBox();
+            this.btnGitHub = new System.Windows.Forms.Button();
+            this.btnExportToWord = new ReaLTaiizor.Controls.HopeButton();
+            this.btnProcessOCR = new ReaLTaiizor.Controls.HopeButton();
+            this.lblStatus = new ReaLTaiizor.Controls.HopeTextBox();
+            this.pictureBox = new ReaLTaiizor.Controls.HopePictureBox();
+            this.btnClearSelection = new System.Windows.Forms.Button();
+            this.txtExtractedTextBackground = new ReaLTaiizor.Controls.HopeTextBox();
+            this.lblImagePath = new ReaLTaiizor.Controls.HopeTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.hopePictureBox1 = new ReaLTaiizor.Controls.HopePictureBox();
+            this.parrotGradientPanel1 = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.nightForm1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // nightForm1
             // 
-            nightForm1.BackColor = Color.FromArgb(40, 48, 51);
-            nightForm1.Controls.Add(btnSelectDocOrImage);
-            nightForm1.Controls.Add(txtExtractedText);
-            nightForm1.Controls.Add(btnGitHub);
-            nightForm1.Controls.Add(btnExportToWord);
-            nightForm1.Controls.Add(btnProcessOCR);
-            nightForm1.Controls.Add(lblStatus);
-            nightForm1.Controls.Add(pictureBox);
-            nightForm1.Controls.Add(btnClearSelection);
-            nightForm1.Controls.Add(txtExtractedTextBackground);
-            nightForm1.Controls.Add(lblImagePath);
-            nightForm1.Controls.Add(panel1);
-            nightForm1.Controls.Add(hopePictureBox1);
-            nightForm1.Controls.Add(parrotGradientPanel1);
-            nightForm1.Controls.Add(btnMinimize);
-            nightForm1.Controls.Add(btnClose);
-            nightForm1.Dock = DockStyle.Fill;
-            nightForm1.DrawIcon = false;
-            nightForm1.Font = new Font("Segoe UI", 9F);
-            nightForm1.HeadColor = Color.FromArgb(50, 58, 61);
-            nightForm1.Location = new Point(0, 0);
-            nightForm1.MinimumSize = new Size(100, 42);
-            nightForm1.Name = "nightForm1";
-            nightForm1.Padding = new Padding(0, 31, 0, 0);
-            nightForm1.Size = new Size(775, 567);
-            nightForm1.TabIndex = 0;
-            nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
-            nightForm1.TitleBarTextColor = Color.Gainsboro;
+            this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.nightForm1.Controls.Add(this.btnSelectDocOrImage);
+            this.nightForm1.Controls.Add(this.txtExtractedText);
+            this.nightForm1.Controls.Add(this.btnGitHub);
+            this.nightForm1.Controls.Add(this.btnExportToWord);
+            this.nightForm1.Controls.Add(this.btnProcessOCR);
+            this.nightForm1.Controls.Add(this.lblStatus);
+            this.nightForm1.Controls.Add(this.pictureBox);
+            this.nightForm1.Controls.Add(this.btnClearSelection);
+            this.nightForm1.Controls.Add(this.txtExtractedTextBackground);
+            this.nightForm1.Controls.Add(this.lblImagePath);
+            this.nightForm1.Controls.Add(this.panel1);
+            this.nightForm1.Controls.Add(this.hopePictureBox1);
+            this.nightForm1.Controls.Add(this.parrotGradientPanel1);
+            this.nightForm1.Controls.Add(this.btnMinimize);
+            this.nightForm1.Controls.Add(this.btnClose);
+            this.nightForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nightForm1.DrawIcon = false;
+            this.nightForm1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nightForm1.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.nightForm1.Location = new System.Drawing.Point(0, 0);
+            this.nightForm1.MinimumSize = new System.Drawing.Size(86, 36);
+            this.nightForm1.Name = "nightForm1";
+            this.nightForm1.Padding = new System.Windows.Forms.Padding(0, 27, 0, 0);
+            this.nightForm1.Size = new System.Drawing.Size(664, 491);
+            this.nightForm1.TabIndex = 0;
+            this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
+            this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
             // btnSelectDocOrImage
             // 
-            btnSelectDocOrImage.BackColor = Color.FromArgb(50, 58, 61);
-            btnSelectDocOrImage.FlatAppearance.BorderColor = Color.MediumSeaGreen;
-            btnSelectDocOrImage.FlatAppearance.BorderSize = 2;
-            btnSelectDocOrImage.FlatStyle = FlatStyle.Flat;
-            btnSelectDocOrImage.ForeColor = Color.FromArgb(224, 224, 224);
-            btnSelectDocOrImage.Location = new Point(49, 100);
-            btnSelectDocOrImage.Name = "btnSelectDocOrImage";
-            btnSelectDocOrImage.Size = new Size(135, 32);
-            btnSelectDocOrImage.TabIndex = 18;
-            btnSelectDocOrImage.Text = "SELECT FILE";
-            btnSelectDocOrImage.UseVisualStyleBackColor = false;
-            btnSelectDocOrImage.Click += btnSelectDocOrImage_Click;
+            this.btnSelectDocOrImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnSelectDocOrImage.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSelectDocOrImage.FlatAppearance.BorderSize = 2;
+            this.btnSelectDocOrImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectDocOrImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSelectDocOrImage.Location = new System.Drawing.Point(42, 87);
+            this.btnSelectDocOrImage.Name = "btnSelectDocOrImage";
+            this.btnSelectDocOrImage.Size = new System.Drawing.Size(116, 28);
+            this.btnSelectDocOrImage.TabIndex = 18;
+            this.btnSelectDocOrImage.Text = "SELECT FILE";
+            this.btnSelectDocOrImage.UseVisualStyleBackColor = false;
+            this.btnSelectDocOrImage.Click += new System.EventHandler(this.btnSelectDocOrImage_Click);
             // 
             // txtExtractedText
             // 
-            txtExtractedText.BackColor = Color.FromArgb(50, 58, 61);
-            txtExtractedText.BorderStyle = BorderStyle.None;
-            txtExtractedText.ForeColor = Color.White;
-            txtExtractedText.Location = new Point(286, 157);
-            txtExtractedText.Name = "txtExtractedText";
-            txtExtractedText.ScrollBars = RichTextBoxScrollBars.Vertical;
-            txtExtractedText.Size = new Size(439, 339);
-            txtExtractedText.TabIndex = 17;
-            txtExtractedText.Text = "";
+            this.txtExtractedText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtExtractedText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExtractedText.ForeColor = System.Drawing.Color.White;
+            this.txtExtractedText.Location = new System.Drawing.Point(245, 136);
+            this.txtExtractedText.Name = "txtExtractedText";
+            this.txtExtractedText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtExtractedText.Size = new System.Drawing.Size(376, 294);
+            this.txtExtractedText.TabIndex = 17;
+            this.txtExtractedText.Text = "";
             // 
             // btnGitHub
             // 
-            btnGitHub.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnGitHub.BackColor = Color.Transparent;
-            btnGitHub.FlatAppearance.BorderColor = Color.FromArgb(50, 58, 61);
-            btnGitHub.FlatAppearance.BorderSize = 0;
-            btnGitHub.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnGitHub.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnGitHub.FlatStyle = FlatStyle.Flat;
-            btnGitHub.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            btnGitHub.ForeColor = Color.FromArgb(224, 224, 224);
-            btnGitHub.Image = (Image)resources.GetObject("btnGitHub.Image");
-            btnGitHub.Location = new Point(121, 501);
-            btnGitHub.Name = "btnGitHub";
-            btnGitHub.Size = new Size(36, 31);
-            btnGitHub.TabIndex = 14;
-            btnGitHub.UseVisualStyleBackColor = false;
-            btnGitHub.Click += btnGitHub_Click;
+            this.btnGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGitHub.BackColor = System.Drawing.Color.Transparent;
+            this.btnGitHub.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnGitHub.FlatAppearance.BorderSize = 0;
+            this.btnGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGitHub.Image = ((System.Drawing.Image)(resources.GetObject("btnGitHub.Image")));
+            this.btnGitHub.Location = new System.Drawing.Point(104, 434);
+            this.btnGitHub.Name = "btnGitHub";
+            this.btnGitHub.Size = new System.Drawing.Size(31, 27);
+            this.btnGitHub.TabIndex = 14;
+            this.btnGitHub.UseVisualStyleBackColor = false;
+            this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
             // 
             // btnExportToWord
             // 
-            btnExportToWord.BorderColor = Color.FromArgb(220, 223, 230);
-            btnExportToWord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            btnExportToWord.DangerColor = Color.FromArgb(245, 108, 108);
-            btnExportToWord.DefaultColor = Color.FromArgb(255, 255, 255);
-            btnExportToWord.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExportToWord.HoverTextColor = Color.FromArgb(48, 49, 51);
-            btnExportToWord.InfoColor = Color.FromArgb(144, 147, 153);
-            btnExportToWord.Location = new Point(46, 453);
-            btnExportToWord.Name = "btnExportToWord";
-            btnExportToWord.PrimaryColor = Color.DodgerBlue;
-            btnExportToWord.Size = new Size(200, 33);
-            btnExportToWord.SuccessColor = Color.FromArgb(103, 194, 58);
-            btnExportToWord.TabIndex = 7;
-            btnExportToWord.Text = "EXPORT TO WORD";
-            btnExportToWord.TextColor = Color.White;
-            btnExportToWord.WarningColor = Color.FromArgb(230, 162, 60);
-            btnExportToWord.Click += btnExportToWord_Click;
+            this.btnExportToWord.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnExportToWord.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnExportToWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportToWord.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnExportToWord.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnExportToWord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportToWord.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnExportToWord.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnExportToWord.Location = new System.Drawing.Point(39, 393);
+            this.btnExportToWord.Name = "btnExportToWord";
+            this.btnExportToWord.PrimaryColor = System.Drawing.Color.DodgerBlue;
+            this.btnExportToWord.Size = new System.Drawing.Size(171, 29);
+            this.btnExportToWord.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnExportToWord.TabIndex = 7;
+            this.btnExportToWord.Text = "EXPORT TO WORD";
+            this.btnExportToWord.TextColor = System.Drawing.Color.White;
+            this.btnExportToWord.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnExportToWord.Click += new System.EventHandler(this.btnExportToWord_Click);
             // 
             // btnProcessOCR
             // 
-            btnProcessOCR.BorderColor = Color.FromArgb(220, 223, 230);
-            btnProcessOCR.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
-            btnProcessOCR.DangerColor = Color.FromArgb(245, 108, 108);
-            btnProcessOCR.DefaultColor = Color.FromArgb(255, 255, 255);
-            btnProcessOCR.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProcessOCR.HoverTextColor = Color.FromArgb(48, 49, 51);
-            btnProcessOCR.InfoColor = Color.FromArgb(144, 147, 153);
-            btnProcessOCR.Location = new Point(46, 405);
-            btnProcessOCR.Name = "btnProcessOCR";
-            btnProcessOCR.PrimaryColor = Color.IndianRed;
-            btnProcessOCR.Size = new Size(200, 33);
-            btnProcessOCR.SuccessColor = Color.FromArgb(103, 194, 58);
-            btnProcessOCR.TabIndex = 16;
-            btnProcessOCR.Text = "EXTRACT TEXT";
-            btnProcessOCR.TextColor = Color.White;
-            btnProcessOCR.WarningColor = Color.FromArgb(230, 162, 60);
-            btnProcessOCR.Click += btnProcessOCR_Click;
+            this.btnProcessOCR.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.btnProcessOCR.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            this.btnProcessOCR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProcessOCR.DangerColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.btnProcessOCR.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnProcessOCR.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcessOCR.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.btnProcessOCR.InfoColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(147)))), ((int)(((byte)(153)))));
+            this.btnProcessOCR.Location = new System.Drawing.Point(39, 351);
+            this.btnProcessOCR.Name = "btnProcessOCR";
+            this.btnProcessOCR.PrimaryColor = System.Drawing.Color.IndianRed;
+            this.btnProcessOCR.Size = new System.Drawing.Size(171, 29);
+            this.btnProcessOCR.SuccessColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.btnProcessOCR.TabIndex = 16;
+            this.btnProcessOCR.Text = "EXTRACT TEXT";
+            this.btnProcessOCR.TextColor = System.Drawing.Color.White;
+            this.btnProcessOCR.WarningColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.btnProcessOCR.Click += new System.EventHandler(this.btnProcessOCR_Click);
             // 
             // lblStatus
             // 
-            lblStatus.BackColor = Color.FromArgb(50, 58, 61);
-            lblStatus.BaseColor = Color.FromArgb(44, 55, 66);
-            lblStatus.BorderColorA = Color.FromArgb(64, 158, 255);
-            lblStatus.BorderColorB = Color.Gray;
-            lblStatus.Font = new Font("Calibri", 9.25F);
-            lblStatus.ForeColor = Color.FromArgb(192, 255, 192);
-            lblStatus.Hint = "";
-            lblStatus.Location = new Point(52, 321);
-            lblStatus.MaxLength = 32767;
-            lblStatus.Multiline = true;
-            lblStatus.Name = "lblStatus";
-            lblStatus.PasswordChar = '\0';
-            lblStatus.ScrollBars = ScrollBars.None;
-            lblStatus.SelectedText = "";
-            lblStatus.SelectionLength = 0;
-            lblStatus.SelectionStart = 0;
-            lblStatus.Size = new Size(188, 65);
-            lblStatus.TabIndex = 15;
-            lblStatus.TabStop = false;
-            lblStatus.UseSystemPasswordChar = false;
+            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.lblStatus.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.lblStatus.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.lblStatus.BorderColorB = System.Drawing.Color.Gray;
+            this.lblStatus.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblStatus.Hint = "";
+            this.lblStatus.Location = new System.Drawing.Point(45, 278);
+            this.lblStatus.MaxLength = 32767;
+            this.lblStatus.Multiline = true;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.PasswordChar = '\0';
+            this.lblStatus.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.lblStatus.SelectedText = "";
+            this.lblStatus.SelectionLength = 0;
+            this.lblStatus.SelectionStart = 0;
+            this.lblStatus.Size = new System.Drawing.Size(161, 56);
+            this.lblStatus.TabIndex = 15;
+            this.lblStatus.TabStop = false;
+            this.lblStatus.UseSystemPasswordChar = false;
             // 
             // pictureBox
             // 
-            pictureBox.BackColor = Color.FromArgb(50, 58, 61);
-            pictureBox.BackgroundImage = Properties.Resources.image_document_240px;
-            pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox.Image = Properties.Resources.image_document_240px;
-            pictureBox.Location = new Point(52, 159);
-            pictureBox.Name = "pictureBox";
-            pictureBox.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            pictureBox.Size = new Size(188, 137);
-            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            pictureBox.TabIndex = 14;
-            pictureBox.TabStop = false;
-            pictureBox.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.pictureBox.BackgroundImage = global::OCRTextReader.Properties.Resources.image_document_240px;
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox.Image = global::OCRTextReader.Properties.Resources.image_document_240px;
+            this.pictureBox.Location = new System.Drawing.Point(45, 138);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.pictureBox.Size = new System.Drawing.Size(161, 119);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.pictureBox.TabIndex = 14;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // btnClearSelection
             // 
-            btnClearSelection.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClearSelection.BackColor = Color.Transparent;
-            btnClearSelection.FlatAppearance.BorderColor = Color.FromArgb(50, 58, 61);
-            btnClearSelection.FlatAppearance.BorderSize = 0;
-            btnClearSelection.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnClearSelection.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnClearSelection.FlatStyle = FlatStyle.Flat;
-            btnClearSelection.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            btnClearSelection.ForeColor = Color.FromArgb(224, 224, 224);
-            btnClearSelection.Image = Properties.Resources.broom_24px;
-            btnClearSelection.Location = new Point(221, 101);
-            btnClearSelection.Name = "btnClearSelection";
-            btnClearSelection.Size = new Size(36, 31);
-            btnClearSelection.TabIndex = 13;
-            btnClearSelection.UseVisualStyleBackColor = false;
-            btnClearSelection.Click += btnClearSelection_Click;
+            this.btnClearSelection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearSelection.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearSelection.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnClearSelection.FlatAppearance.BorderSize = 0;
+            this.btnClearSelection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClearSelection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClearSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnClearSelection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnClearSelection.Image = global::OCRTextReader.Properties.Resources.broom_24px;
+            this.btnClearSelection.Location = new System.Drawing.Point(189, 88);
+            this.btnClearSelection.Name = "btnClearSelection";
+            this.btnClearSelection.Size = new System.Drawing.Size(31, 27);
+            this.btnClearSelection.TabIndex = 13;
+            this.btnClearSelection.UseVisualStyleBackColor = false;
+            this.btnClearSelection.Click += new System.EventHandler(this.btnClearSelection_Click);
             // 
             // txtExtractedTextBackground
             // 
-            txtExtractedTextBackground.BackColor = Color.FromArgb(50, 58, 61);
-            txtExtractedTextBackground.BaseColor = Color.FromArgb(44, 55, 66);
-            txtExtractedTextBackground.BorderColorA = Color.FromArgb(64, 158, 255);
-            txtExtractedTextBackground.BorderColorB = Color.FromArgb(220, 223, 230);
-            txtExtractedTextBackground.Font = new Font("Calibri", 9.25F);
-            txtExtractedTextBackground.ForeColor = Color.White;
-            txtExtractedTextBackground.Hint = "";
-            txtExtractedTextBackground.Location = new Point(282, 153);
-            txtExtractedTextBackground.MaxLength = 32767;
-            txtExtractedTextBackground.Multiline = true;
-            txtExtractedTextBackground.Name = "txtExtractedTextBackground";
-            txtExtractedTextBackground.PasswordChar = '\0';
-            txtExtractedTextBackground.ScrollBars = ScrollBars.None;
-            txtExtractedTextBackground.SelectedText = "";
-            txtExtractedTextBackground.SelectionLength = 0;
-            txtExtractedTextBackground.SelectionStart = 0;
-            txtExtractedTextBackground.Size = new Size(447, 347);
-            txtExtractedTextBackground.TabIndex = 11;
-            txtExtractedTextBackground.TabStop = false;
-            txtExtractedTextBackground.UseSystemPasswordChar = false;
+            this.txtExtractedTextBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.txtExtractedTextBackground.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.txtExtractedTextBackground.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.txtExtractedTextBackground.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.txtExtractedTextBackground.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.txtExtractedTextBackground.ForeColor = System.Drawing.Color.White;
+            this.txtExtractedTextBackground.Hint = "";
+            this.txtExtractedTextBackground.Location = new System.Drawing.Point(242, 133);
+            this.txtExtractedTextBackground.MaxLength = 32767;
+            this.txtExtractedTextBackground.Multiline = true;
+            this.txtExtractedTextBackground.Name = "txtExtractedTextBackground";
+            this.txtExtractedTextBackground.PasswordChar = '\0';
+            this.txtExtractedTextBackground.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtExtractedTextBackground.SelectedText = "";
+            this.txtExtractedTextBackground.SelectionLength = 0;
+            this.txtExtractedTextBackground.SelectionStart = 0;
+            this.txtExtractedTextBackground.Size = new System.Drawing.Size(383, 301);
+            this.txtExtractedTextBackground.TabIndex = 11;
+            this.txtExtractedTextBackground.TabStop = false;
+            this.txtExtractedTextBackground.UseSystemPasswordChar = false;
             // 
             // lblImagePath
             // 
-            lblImagePath.BackColor = Color.FromArgb(50, 58, 61);
-            lblImagePath.BaseColor = Color.FromArgb(44, 55, 66);
-            lblImagePath.BorderColorA = Color.FromArgb(64, 158, 255);
-            lblImagePath.BorderColorB = Color.Gray;
-            lblImagePath.Font = new Font("Calibri", 9.25F);
-            lblImagePath.ForeColor = Color.LightGray;
-            lblImagePath.Hint = "";
-            lblImagePath.Location = new Point(282, 100);
-            lblImagePath.MaxLength = 32767;
-            lblImagePath.Multiline = false;
-            lblImagePath.Name = "lblImagePath";
-            lblImagePath.PasswordChar = '\0';
-            lblImagePath.ScrollBars = ScrollBars.None;
-            lblImagePath.SelectedText = "";
-            lblImagePath.SelectionLength = 0;
-            lblImagePath.SelectionStart = 0;
-            lblImagePath.Size = new Size(447, 32);
-            lblImagePath.TabIndex = 10;
-            lblImagePath.TabStop = false;
-            lblImagePath.UseSystemPasswordChar = false;
+            this.lblImagePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.lblImagePath.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.lblImagePath.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.lblImagePath.BorderColorB = System.Drawing.Color.Gray;
+            this.lblImagePath.Font = new System.Drawing.Font("Calibri", 9.25F);
+            this.lblImagePath.ForeColor = System.Drawing.Color.LightGray;
+            this.lblImagePath.Hint = "";
+            this.lblImagePath.Location = new System.Drawing.Point(242, 87);
+            this.lblImagePath.MaxLength = 32767;
+            this.lblImagePath.Multiline = false;
+            this.lblImagePath.Name = "lblImagePath";
+            this.lblImagePath.PasswordChar = '\0';
+            this.lblImagePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.lblImagePath.SelectedText = "";
+            this.lblImagePath.SelectionLength = 0;
+            this.lblImagePath.SelectionStart = 0;
+            this.lblImagePath.Size = new System.Drawing.Size(383, 32);
+            this.lblImagePath.TabIndex = 10;
+            this.lblImagePath.TabStop = false;
+            this.lblImagePath.UseSystemPasswordChar = false;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, 32);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(775, 44);
-            panel1.TabIndex = 8;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(664, 38);
+            this.panel1.TabIndex = 8;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 8.75F, FontStyle.Bold);
-            label2.ForeColor = Color.DarkGray;
-            label2.Location = new Point(182, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(227, 15);
-            label2.TabIndex = 11;
-            label2.Text = "Extract Text from Images and Documents";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(156, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(227, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Extract Text from Images and Documents";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Lucida Handwriting", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkGray;
-            label1.Location = new Point(47, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 17);
-            label1.TabIndex = 10;
-            label1.Text = "OCRTextReader";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(40, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "OCRTextReader";
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(36, 43, 46);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 43);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(775, 1);
-            panel2.TabIndex = 9;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 37);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(664, 1);
+            this.panel2.TabIndex = 9;
             // 
             // hopePictureBox1
             // 
-            hopePictureBox1.BackColor = Color.FromArgb(50, 58, 61);
-            hopePictureBox1.Location = new Point(46, 153);
-            hopePictureBox1.Name = "hopePictureBox1";
-            hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            hopePictureBox1.Size = new Size(200, 149);
-            hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            hopePictureBox1.TabIndex = 5;
-            hopePictureBox1.TabStop = false;
-            hopePictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hopePictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.hopePictureBox1.Location = new System.Drawing.Point(39, 133);
+            this.hopePictureBox1.Name = "hopePictureBox1";
+            this.hopePictureBox1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.hopePictureBox1.Size = new System.Drawing.Size(171, 129);
+            this.hopePictureBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.hopePictureBox1.TabIndex = 5;
+            this.hopePictureBox1.TabStop = false;
+            this.hopePictureBox1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // parrotGradientPanel1
             // 
-            parrotGradientPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            parrotGradientPanel1.BottomLeft = Color.FromArgb(64, 64, 64);
-            parrotGradientPanel1.BottomRight = Color.FromArgb(64, 64, 64);
-            parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            parrotGradientPanel1.Location = new Point(0, 557);
-            parrotGradientPanel1.Name = "parrotGradientPanel1";
-            parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotGradientPanel1.PrimerColor = Color.White;
-            parrotGradientPanel1.Size = new Size(775, 10);
-            parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
-            parrotGradientPanel1.TabIndex = 3;
-            parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotGradientPanel1.TopLeft = Color.Lime;
-            parrotGradientPanel1.TopRight = Color.Red;
+            this.parrotGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.parrotGradientPanel1.BottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.BottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.parrotGradientPanel1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.parrotGradientPanel1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.parrotGradientPanel1.Location = new System.Drawing.Point(0, 483);
+            this.parrotGradientPanel1.Name = "parrotGradientPanel1";
+            this.parrotGradientPanel1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.parrotGradientPanel1.PrimerColor = System.Drawing.Color.White;
+            this.parrotGradientPanel1.Size = new System.Drawing.Size(664, 9);
+            this.parrotGradientPanel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.parrotGradientPanel1.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            this.parrotGradientPanel1.TabIndex = 3;
+            this.parrotGradientPanel1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.parrotGradientPanel1.TopLeft = System.Drawing.Color.Lime;
+            this.parrotGradientPanel1.TopRight = System.Drawing.Color.Red;
             // 
             // btnMinimize
             // 
-            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimize.BackColor = Color.FromArgb(50, 58, 61);
-            btnMinimize.FlatAppearance.BorderColor = Color.FromArgb(50, 58, 61);
-            btnMinimize.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatAppearance.MouseDownBackColor = Color.FromArgb(50, 58, 61);
-            btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 58, 61);
-            btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            btnMinimize.ForeColor = Color.FromArgb(224, 224, 224);
-            btnMinimize.Image = Properties.Resources.minus_20px;
-            btnMinimize.Location = new Point(695, 0);
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(36, 31);
-            btnMinimize.TabIndex = 1;
-            btnMinimize.UseVisualStyleBackColor = false;
-            btnMinimize.Click += btnMinimize_Click;
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimize.Image = global::OCRTextReader.Properties.Resources.minus_20px;
+            this.btnMinimize.Location = new System.Drawing.Point(596, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(31, 27);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
-            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClose.BackColor = Color.FromArgb(50, 58, 61);
-            btnClose.FlatAppearance.BorderColor = Color.FromArgb(50, 58, 61);
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold);
-            btnClose.ForeColor = Color.FromArgb(224, 224, 224);
-            btnClose.Location = new Point(738, 0);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(36, 31);
-            btnClose.TabIndex = 0;
-            btnClose.Text = "X";
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnClose.Location = new System.Drawing.Point(633, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(31, 27);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // openFileDialog
             // 
-            openFileDialog.Filter = resources.GetString("openFileDialog.Filter");
-            openFileDialog.Title = "Select Image or Document";
+            this.openFileDialog.Filter = resources.GetString("openFileDialog.Filter");
+            this.openFileDialog.Title = "Select Image or Document";
             // 
             // saveFileDialog
             // 
-            saveFileDialog.DefaultExt = "docx";
-            saveFileDialog.Filter = "Word Documents|*.docx|All Files|*.*";
-            saveFileDialog.Title = "Save Extracted Text as Word Document";
+            this.saveFileDialog.DefaultExt = "docx";
+            this.saveFileDialog.Filter = "Word Documents|*.docx|All Files|*.*";
+            this.saveFileDialog.Title = "Save Extracted Text as Word Document";
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(775, 567);
-            Controls.Add(nightForm1);
-            FormBorderStyle = FormBorderStyle.None;
-            MaximumSize = new Size(1366, 720);
-            MinimumSize = new Size(190, 40);
-            Name = "Main";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "formTheme1";
-            TransparencyKey = Color.Fuchsia;
-            nightForm1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)hopePictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(664, 491);
+            this.Controls.Add(this.nightForm1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1171, 624);
+            this.MinimumSize = new System.Drawing.Size(163, 35);
+            this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "formTheme1";
+            this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.nightForm1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hopePictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
