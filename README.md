@@ -2,7 +2,7 @@
 A lightweight Windows desktop application that extracts text from images, PDFs, and Office documents with ease.
 
 ## Features
-- **Image Selection**: Select images or documents (JPG, PNG, BMP, GIF, TIFF, PDF)
+- **Image Selection**: Select images or documents (JPG, PNG, BMP, GIF, TIFF, PDF, EXCEL, POWERPOINT (PPTX)
 - **OCR Processing**: Extract text from images using Tesseract OCR engine
 - **Text Preview**: View extracted text in the application
 - **Word Export**: Export extracted text to Microsoft Word (.docx) format
