@@ -9,7 +9,7 @@ A lightweight Windows desktop application that extracts text from images, PDFs, 
 - **User-Friendly Interface**: Clean and intuitive Windows Forms UI built using the ReaLTaiizor UI framework.
 
 ## Prerequisites
-1. **.NET 9.0 SDK** or later
+1. **.NET 8.0 SDK** or later
 2. **Tesseract OCR** installed on your system
 
 ### Installing Tesseract OCR
