@@ -411,6 +411,7 @@ namespace OCRTextReader
             this.ClientSize = new System.Drawing.Size(664, 491);
             this.Controls.Add(this.nightForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1171, 624);
             this.MinimumSize = new System.Drawing.Size(163, 35);
             this.Name = "Main";

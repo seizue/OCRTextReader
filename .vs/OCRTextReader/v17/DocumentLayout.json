@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\ven\\documents\\prompt\\ocrtextreader\\ocrtextreader\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\admin\\desktop\\ven\\repository\\ocrtextreader\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\ven\\documents\\prompt\\ocrtextreader\\ocrtextreader\\ocrtextreader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\admin\\desktop\\ven\\repository\\ocrtextreader\\ocrtextreader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:ocrtextreader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\ven\\documents\\prompt\\ocrtextreader\\ocrtextreader\\ocrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:ocrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\admin\\desktop\\ven\\repository\\ocrtextreader\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\ven\\documents\\prompt\\ocrtextreader\\ocrtextreader\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|c:\\users\\admin\\desktop\\ven\\repository\\ocrtextreader\\ocrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}|OCRTextReader.csproj|solutionrelative:ocrservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,54 +33,51 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "OCRTextReader.csproj",
-              "DocumentMoniker": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRTextReader.csproj",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRTextReader.csproj",
               "RelativeDocumentMoniker": "OCRTextReader.csproj",
-              "ToolTip": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRTextReader.csproj",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRTextReader.csproj",
               "RelativeToolTip": "OCRTextReader.csproj",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAYwBUAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-02-08T10:14:56.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Main.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Main.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Main.cs",
               "RelativeToolTip": "Main.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAnwNwAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAiwNAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T13:06:30.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T12:30:37.671Z"
+              "WhenOpened": "2026-02-07T12:30:37.671Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "OCRService.cs",
-              "DocumentMoniker": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRService.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRService.cs",
               "RelativeDocumentMoniker": "OCRService.cs",
-              "ToolTip": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRService.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRService.cs",
               "RelativeToolTip": "OCRService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -90,9 +87,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Main.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\Main.cs [Design]",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\Main.cs [Design]",
               "RelativeToolTip": "Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-07T13:36:47.379Z",

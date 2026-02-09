@@ -1963,26 +1963,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ven\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRTextReader.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRTextReader.csproj",
       "projectName": "OCRTextReader",
-      "projectPath": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\OCRTextReader.csproj",
-      "packagesPath": "C:\\Users\\Ven\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ven\\Documents\\Prompt\\OCRTextReader\\OCRTextReader\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\OCRTextReader.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\Desktop\\Ven\\Repository\\OCRTextReader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ven\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1991,7 +1988,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -2042,7 +2038,7 @@
             "version": "[9.5.0, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
