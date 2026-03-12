@@ -1,0 +1,41 @@
+name: Build Installer
+
+on:
+  workflow_dispatch:
+  release:
+    types: [ created ]
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  PROJECT_PATH: 'OCRTextReader.csproj'
+  BUILD_CONFIGURATION: 'Release'
+
+jobs:
+  build-installer:
+    name: Build Windows Installer
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+      
+    - name: Publish application
+      run: dotnet publish ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --output ./publish --self-contained true --runtime win-x64
+      
+    - name: Create portable ZIP
+      run: Compress-Archive -Path ./publish/* -DestinationPath OCRTextReader-Portable.zip
+      
+    - name: Upload installer artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: OCRTextReader-Installer
+        path: OCRTextReader-Portable.zip
+        retention-days: 30
