@@ -7,6 +7,9 @@ A lightweight Windows desktop application that extracts text from images, PDFs, 
 - **Text Preview**: View extracted text in the application
 - **Word Export**: Export extracted text to Microsoft Word (.docx) format
 - **User-Friendly Interface**: Clean and intuitive Windows Forms UI built using the ReaLTaiizor UI framework.
+  
+## Download
+[Download Link](https://github.com/seizue/OCRTextReader/releases/download/1.0.0/OCRTextReader_1.0.0.rar)
 
 ## Prerequisites
 1. **.NET 4.8 SDK** or later
@@ -96,3 +99,5 @@ This project uses the following open-source libraries:
 
 ## Screenshot
 <img width="1366" height="718" alt="explorer_nYHulevtkv" src="https://github.com/user-attachments/assets/a38e89f1-4ee7-4221-bbb7-4af9e4b71aa5" />
+
+## Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
