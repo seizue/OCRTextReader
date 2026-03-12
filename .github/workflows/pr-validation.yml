@@ -6,7 +6,7 @@ on:
 
 env:
   DOTNET_VERSION: '8.0.x'
-  PROJECT_PATH: 'OCRTextReader/OCRTextReader.csproj'
+  PROJECT_PATH: 'OCRTextReader.csproj'
 
 jobs:
   validate:

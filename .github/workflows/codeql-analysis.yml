@@ -38,10 +38,10 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore OCRTextReader/OCRTextReader.csproj
+      run: dotnet restore OCRTextReader.csproj
 
     - name: Build
-      run: dotnet build OCRTextReader/OCRTextReader.csproj --configuration Release --no-restore
+      run: dotnet build OCRTextReader.csproj --configuration Release --no-restore
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
