@@ -1,7 +1,46 @@
-/.vs
-/.vs/OCRTextReader
-/.vs/OCRTextReader/FileContentIndex
-/obj
-/obj/Debug
-/obj/Debug/net9.0-windows
-obj/Debug/net9.0-windows/OCRTextReader.csproj.GenerateResource.cache
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+## Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Publish
+publish/
+*.pubxml
+*.publishproj
+
+## Others
+*.cache
+*.log
+*.tmp
+*.temp
+UpgradeLog*.htm
