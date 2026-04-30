@@ -72,7 +72,11 @@ jobs:
       run: |
         $version = "${{ github.ref_name }}" -replace '^v', ''
         $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+        Write-Host "ISCC exists: $(Test-Path $iscc)"
         & $iscc /DMyAppVersion="$version" "Setup\setup.iss"
+        Write-Host "Exit code: $LASTEXITCODE"
+        Write-Host "=== installer-output contents ==="
+        Get-ChildItem "installer-output" -ErrorAction SilentlyContinue | Select-Object Name
         echo "VERSION=$version" >> $env:GITHUB_ENV
 
     - name: Stage release assets
@@ -80,6 +84,9 @@ jobs:
         $version = "${{ env.VERSION }}"
         $outDir = "release-assets"
         New-Item -ItemType Directory -Path $outDir | Out-Null
+
+        Write-Host "=== Searching for setup exe ==="
+        Get-ChildItem -Path . -Filter "*setup*.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
 
         $installer = "installer-output\OCRTextReader-$version-setup.exe"
         Copy-Item $installer "$outDir\OCRTextReader-$version-setup.exe"
