@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "DocumentFormat.OpenXml/3.4.1": {
+      "DocumentFormat.OpenXml/3.5.1": {
         "type": "package",
         "dependencies": {
-          "DocumentFormat.OpenXml.Framework": "3.4.1"
+          "DocumentFormat.OpenXml.Framework": "3.5.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -23,7 +23,7 @@
           }
         }
       },
-      "DocumentFormat.OpenXml.Framework/3.4.1": {
+      "DocumentFormat.OpenXml.Framework/3.5.1": {
         "type": "package",
         "frameworkAssemblies": [
           "System",
@@ -41,13 +41,13 @@
           }
         }
       },
-      "EPPlus/8.4.2": {
+      "EPPlus/8.5.3": {
         "type": "package",
         "dependencies": {
           "EPPlus.Interfaces": "8.4.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "System.ComponentModel.Annotations": "5.0.0",
-          "System.Security.Cryptography.Xml": "8.0.2"
+          "System.Security.Cryptography.Xml": "8.0.3"
         },
         "frameworkAssemblies": [
           "PresentationCore",
@@ -78,12 +78,12 @@
           "lib/net462/EPPlus.Interfaces.dll": {}
         }
       },
-      "itext/9.5.0": {
+      "itext/9.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
           "System.Security.Cryptography.Xml": "6.0.2",
-          "itext.commons": "9.5.0"
+          "itext.commons": "9.6.0"
         },
         "compile": {
           "lib/net461/itext.barcodes.dll": {
@@ -156,7 +156,7 @@
           }
         }
       },
-      "itext.commons/9.5.0": {
+      "itext.commons/9.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -173,10 +173,10 @@
           }
         }
       },
-      "itext7/9.5.0": {
+      "itext7/9.6.0": {
         "type": "package",
         "dependencies": {
-          "itext": "9.5.0"
+          "itext": "9.6.0"
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
@@ -196,6 +196,22 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.Bcl.HashCode/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/5.0.0": {
@@ -350,7 +366,7 @@
           }
         }
       },
-      "ReaLTaiizor/3.8.1.5": {
+      "ReaLTaiizor/3.8.1.8": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -368,20 +384,40 @@
           }
         }
       },
-      "System.Buffers/4.5.1": {
+      "System.Buffers/4.6.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
         "compile": {
-          "ref/net45/System.Buffers.dll": {
+          "lib/net462/System.Buffers.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net461/System.Buffers.dll": {
+          "lib/net462/System.Buffers.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Collections.Immutable/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.6.3",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.2"
+        },
+        "compile": {
+          "lib/net462/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
       "System.ComponentModel.Annotations/5.0.0": {
@@ -420,49 +456,91 @@
           }
         }
       },
-      "System.Memory/4.5.5": {
+      "System.Formats.Nrbf/10.0.7": {
         "type": "package",
         "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+          "Microsoft.Bcl.HashCode": "6.0.0",
+          "System.Reflection.Metadata": "10.0.7",
+          "System.ValueTuple": "4.6.2"
         },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
         "compile": {
-          "lib/net461/System.Memory.dll": {
+          "lib/net462/System.Formats.Nrbf.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net461/System.Memory.dll": {
+          "lib/net462/System.Formats.Nrbf.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Numerics.Vectors/4.5.0": {
+      "System.Memory/4.6.3": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
+        "dependencies": {
+          "System.Buffers": "4.6.1",
+          "System.Numerics.Vectors": "4.6.1",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.2"
+        },
         "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
+          "lib/net462/System.Memory.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
+          "lib/net462/System.Memory.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Resources.Extensions/8.0.0": {
+      "System.Numerics.Vectors/4.6.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "lib/net462/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Reflection.Metadata/10.0.7": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.5"
+          "System.Collections.Immutable": "10.0.7"
+        },
+        "compile": {
+          "lib/net462/System.Reflection.Metadata.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Reflection.Metadata.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Resources.Extensions/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Nrbf": "10.0.7",
+          "System.Memory": "4.6.3"
         },
         "compile": {
           "lib/net462/System.Resources.Extensions.dll": {
@@ -478,23 +556,26 @@
           "buildTransitive/net462/System.Resources.Extensions.targets": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "System.Runtime.CompilerServices.Unsafe/6.1.2": {
         "type": "package",
         "frameworkAssemblies": [
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net462/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net45/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net462/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Security.Cryptography.Xml/8.0.2": {
+      "System.Security.Cryptography.Xml/8.0.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Security"
@@ -532,18 +613,19 @@
           }
         }
       },
-      "System.ValueTuple/4.5.0": {
+      "System.ValueTuple/4.6.2": {
         "type": "package",
         "frameworkAssemblies": [
-          "mscorlib"
+          "System.ValueTuple"
         ],
         "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
+          "lib/net471/_._": {}
         },
         "runtime": {
-          "lib/net47/System.ValueTuple.dll": {
-            "related": ".xml"
-          }
+          "lib/net471/_._": {}
+        },
+        "build": {
+          "buildTransitive/net471/System.ValueTuple.targets": {}
         }
       },
       "Tesseract/5.2.0": {
@@ -560,10 +642,10 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
-      "DocumentFormat.OpenXml/3.4.1": {
+      "DocumentFormat.OpenXml/3.5.1": {
         "type": "package",
         "dependencies": {
-          "DocumentFormat.OpenXml.Framework": "3.4.1"
+          "DocumentFormat.OpenXml.Framework": "3.5.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -581,7 +663,7 @@
           }
         }
       },
-      "DocumentFormat.OpenXml.Framework/3.4.1": {
+      "DocumentFormat.OpenXml.Framework/3.5.1": {
         "type": "package",
         "frameworkAssemblies": [
           "System",
@@ -599,13 +681,13 @@
           }
         }
       },
-      "EPPlus/8.4.2": {
+      "EPPlus/8.5.3": {
         "type": "package",
         "dependencies": {
           "EPPlus.Interfaces": "8.4.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
           "System.ComponentModel.Annotations": "5.0.0",
-          "System.Security.Cryptography.Xml": "8.0.2"
+          "System.Security.Cryptography.Xml": "8.0.3"
         },
         "frameworkAssemblies": [
           "PresentationCore",
@@ -636,12 +718,12 @@
           "lib/net462/EPPlus.Interfaces.dll": {}
         }
       },
-      "itext/9.5.0": {
+      "itext/9.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
           "System.Security.Cryptography.Xml": "6.0.2",
-          "itext.commons": "9.5.0"
+          "itext.commons": "9.6.0"
         },
         "compile": {
           "lib/net461/itext.barcodes.dll": {
@@ -714,7 +796,7 @@
           }
         }
       },
-      "itext.commons/9.5.0": {
+      "itext.commons/9.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -731,10 +813,10 @@
           }
         }
       },
-      "itext7/9.5.0": {
+      "itext7/9.6.0": {
         "type": "package",
         "dependencies": {
-          "itext": "9.5.0"
+          "itext": "9.6.0"
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
@@ -754,6 +836,22 @@
           "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.Bcl.HashCode/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/5.0.0": {
@@ -908,7 +1006,7 @@
           }
         }
       },
-      "ReaLTaiizor/3.8.1.5": {
+      "ReaLTaiizor/3.8.1.8": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -926,20 +1024,40 @@
           }
         }
       },
-      "System.Buffers/4.5.1": {
+      "System.Buffers/4.6.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "mscorlib"
-        ],
         "compile": {
-          "ref/net45/System.Buffers.dll": {
+          "lib/net462/System.Buffers.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net461/System.Buffers.dll": {
+          "lib/net462/System.Buffers.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Collections.Immutable/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.6.3",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.2"
+        },
+        "compile": {
+          "lib/net462/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
       "System.ComponentModel.Annotations/5.0.0": {
@@ -978,49 +1096,91 @@
           }
         }
       },
-      "System.Memory/4.5.5": {
+      "System.Formats.Nrbf/10.0.7": {
         "type": "package",
         "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+          "Microsoft.Bcl.HashCode": "6.0.0",
+          "System.Reflection.Metadata": "10.0.7",
+          "System.ValueTuple": "4.6.2"
         },
-        "frameworkAssemblies": [
-          "System",
-          "mscorlib"
-        ],
         "compile": {
-          "lib/net461/System.Memory.dll": {
+          "lib/net462/System.Formats.Nrbf.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net461/System.Memory.dll": {
+          "lib/net462/System.Formats.Nrbf.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Numerics.Vectors/4.5.0": {
+      "System.Memory/4.6.3": {
         "type": "package",
-        "frameworkAssemblies": [
-          "System.Numerics",
-          "mscorlib"
-        ],
+        "dependencies": {
+          "System.Buffers": "4.6.1",
+          "System.Numerics.Vectors": "4.6.1",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.2"
+        },
         "compile": {
-          "ref/net46/System.Numerics.Vectors.dll": {
+          "lib/net462/System.Memory.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net46/System.Numerics.Vectors.dll": {
+          "lib/net462/System.Memory.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Resources.Extensions/8.0.0": {
+      "System.Numerics.Vectors/4.6.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics"
+        ],
+        "compile": {
+          "lib/net462/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Reflection.Metadata/10.0.7": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.5"
+          "System.Collections.Immutable": "10.0.7"
+        },
+        "compile": {
+          "lib/net462/System.Reflection.Metadata.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/System.Reflection.Metadata.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Resources.Extensions/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Nrbf": "10.0.7",
+          "System.Memory": "4.6.3"
         },
         "compile": {
           "lib/net462/System.Resources.Extensions.dll": {
@@ -1036,23 +1196,26 @@
           "buildTransitive/net462/System.Resources.Extensions.targets": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "System.Runtime.CompilerServices.Unsafe/6.1.2": {
         "type": "package",
         "frameworkAssemblies": [
           "mscorlib"
         ],
         "compile": {
-          "ref/net461/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net462/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net45/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net462/System.Runtime.CompilerServices.Unsafe.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
         }
       },
-      "System.Security.Cryptography.Xml/8.0.2": {
+      "System.Security.Cryptography.Xml/8.0.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Security"
@@ -1090,18 +1253,19 @@
           }
         }
       },
-      "System.ValueTuple/4.5.0": {
+      "System.ValueTuple/4.6.2": {
         "type": "package",
         "frameworkAssemblies": [
-          "mscorlib"
+          "System.ValueTuple"
         ],
         "compile": {
-          "ref/net47/System.ValueTuple.dll": {}
+          "lib/net471/_._": {}
         },
         "runtime": {
-          "lib/net47/System.ValueTuple.dll": {
-            "related": ".xml"
-          }
+          "lib/net471/_._": {}
+        },
+        "build": {
+          "buildTransitive/net471/System.ValueTuple.targets": {}
         }
       },
       "Tesseract/5.2.0": {
@@ -1119,15 +1283,15 @@
     }
   },
   "libraries": {
-    "DocumentFormat.OpenXml/3.4.1": {
-      "sha512": "iM7k4Spo6ZxxudxLVGcvFLIcF6XJ65aOAsJ24o75CaKGBTuj33cL1O7qnGkQW0+ONOUFff+mWafpZYaa7rNBbg==",
+    "DocumentFormat.OpenXml/3.5.1": {
+      "sha512": "zxdOf5VVCe/uNklbRhj8dVBzQGj3DoqkUuqOp9cAZVuN8mNYDjof1lvSQA2OQNr8Ptc9d7pbA7Azq/ReaI3FpA==",
       "type": "package",
-      "path": "documentformat.openxml/3.4.1",
+      "path": "documentformat.openxml/3.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "documentformat.openxml.3.4.1.nupkg.sha512",
+        "documentformat.openxml.3.5.1.nupkg.sha512",
         "documentformat.openxml.nuspec",
         "icon.png",
         "lib/net10.0/DocumentFormat.OpenXml.dll",
@@ -1144,15 +1308,15 @@
         "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
       ]
     },
-    "DocumentFormat.OpenXml.Framework/3.4.1": {
-      "sha512": "H7l8l84uRb+LTjijpe6PuVDlIDM28s7f//zxss6f1yK1qnaxAEZwRecPkjfE3vjFM7QZ7X4XGF4nicnIynJrBw==",
+    "DocumentFormat.OpenXml.Framework/3.5.1": {
+      "sha512": "U5txtc3ORno73xQx9Lf2gWzfaSZnZwKHfLkTAslhlew9lxe5XbUiCt0dY1fHeAf8yRqszUAe5i/+xLC9R/Xfsw==",
       "type": "package",
-      "path": "documentformat.openxml.framework/3.4.1",
+      "path": "documentformat.openxml.framework/3.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "documentformat.openxml.framework.3.4.1.nupkg.sha512",
+        "documentformat.openxml.framework.3.5.1.nupkg.sha512",
         "documentformat.openxml.framework.nuspec",
         "icon.png",
         "lib/net10.0/DocumentFormat.OpenXml.Framework.dll",
@@ -1171,15 +1335,15 @@
         "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.xml"
       ]
     },
-    "EPPlus/8.4.2": {
-      "sha512": "tFvVPvNpn51NxtyGv7Hzg9nV+M33hX2Tq7tkaw3zxbQqIL8g99TfH0E6pli5huKLHLbntw+Q4nQYpu51YcQMpQ==",
+    "EPPlus/8.5.3": {
+      "sha512": "wU+ogF8qJTLoAqmD+X7ZCWAj2uUsIV8omXm4SkHhIGS4LPfWxlFDQhLb5FPedNp+0dDEA2S8dEpvtCezpzUgBA==",
       "type": "package",
-      "path": "epplus/8.4.2",
+      "path": "epplus/8.5.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "EPPlusLogo.png",
-        "epplus.8.4.2.nupkg.sha512",
+        "epplus.8.5.3.nupkg.sha512",
         "epplus.nuspec",
         "lib/net10.0/EPPlus.dll",
         "lib/net10.0/EPPlus.xml",
@@ -1221,10 +1385,10 @@
         "readme.md"
       ]
     },
-    "itext/9.5.0": {
-      "sha512": "qN+CYYQCKnkEdUzmiDACNpfZGUEhsTMOUZ2YOYQ9NQL+Qi6EC+5kEF8utGKuwaMXQnvq8IeZVPczGd27k/TasQ==",
+    "itext/9.6.0": {
+      "sha512": "Zs+t9M5gSux6eAd/5PqKU0YDFuxhXFSCx9mDqCEe3Uaz+1EajmNdNJDEi+cVK1KdN4vCNCoBe6cU0NV5ZNSvcw==",
       "type": "package",
-      "path": "itext/9.5.0",
+      "path": "itext/9.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1236,7 +1400,7 @@
         "NOTICE_layout.txt",
         "NOTICE_styledxmlparser.txt",
         "gnu-agpl-v3.0.md",
-        "itext.9.5.0.nupkg.sha512",
+        "itext.9.6.0.nupkg.sha512",
         "itext.nuspec",
         "lib/net461/itext.barcodes.dll",
         "lib/net461/itext.barcodes.xml",
@@ -1284,15 +1448,15 @@
         "lib/netstandard2.0/itext.svg.xml"
       ]
     },
-    "itext.commons/9.5.0": {
-      "sha512": "3A7GknafwvGytOe4Jbba+7wYmhBaiZnaP+C8/Qw3sADzHElAjH3HZFRMF9u6Tt01LW7HdwCBTJb7V9ErFxSk8w==",
+    "itext.commons/9.6.0": {
+      "sha512": "tnq8J28uLNQ5Fsc6e40/gKziXT7eD1nWTQ7IO50HPFraWx+dRlbd9iSiT97XJPgaIi+BRAenACUG8ODU7cZuiw==",
       "type": "package",
-      "path": "itext.commons/9.5.0",
+      "path": "itext.commons/9.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
-        "itext.commons.9.5.0.nupkg.sha512",
+        "itext.commons.9.6.0.nupkg.sha512",
         "itext.commons.nuspec",
         "lib/net461/itext.commons.dll",
         "lib/net461/itext.commons.xml",
@@ -1300,17 +1464,17 @@
         "lib/netstandard2.0/itext.commons.xml"
       ]
     },
-    "itext7/9.5.0": {
-      "sha512": "9g+bcx7rslHdYGFBojcVTp8mhCJoWbrkLceMqw/CSScB1kh7YSNPdTEsFqZW/8KrcUvTc0wtRHFqQ9R7K5gFNw==",
+    "itext7/9.6.0": {
+      "sha512": "ZZxr+t23Mn8084v6vPidmry/JrQ7n4LW6ur64OfMO2N4WAckdm+A8mbENK03J8vGxzFB0fD04KXsS1+HnvTB9Q==",
       "type": "package",
-      "path": "itext7/9.5.0",
+      "path": "itext7/9.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ITSC-avatar.png",
         "LICENSE.md",
         "gnu-agpl-v3.0.md",
-        "itext7.9.5.0.nupkg.sha512",
+        "itext7.9.6.0.nupkg.sha512",
         "itext7.nuspec"
       ]
     },
@@ -1334,6 +1498,31 @@
         "microsoft.bcl.asyncinterfaces.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.Bcl.HashCode/6.0.0": {
+      "sha512": "GI4jcoi6eC9ZhNOQylIBaWOQjyGaR8T6N3tC1u8p3EXfndLCVNNWa+Zp+ocjvvS3kNBN09Zma2HXL0ezO0dRfw==",
+      "type": "package",
+      "path": "microsoft.bcl.hashcode/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/Microsoft.Bcl.HashCode.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Bcl.HashCode.targets",
+        "lib/net462/Microsoft.Bcl.HashCode.dll",
+        "lib/net462/Microsoft.Bcl.HashCode.xml",
+        "lib/net6.0/Microsoft.Bcl.HashCode.dll",
+        "lib/net6.0/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
+        "microsoft.bcl.hashcode.6.0.0.nupkg.sha512",
+        "microsoft.bcl.hashcode.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection/5.0.0": {
@@ -1511,10 +1700,10 @@
         "packageIcon.png"
       ]
     },
-    "ReaLTaiizor/3.8.1.5": {
-      "sha512": "1CRzPDhCvGXgheFvqVt8SjMlS8pzWPDGFxqBokRJ/qm4v0dJ7Iu59ydcvaTnOkh+ZfTXdl7HowzKfkJIJqy9hA==",
+    "ReaLTaiizor/3.8.1.8": {
+      "sha512": "BXegoNe8hNOlTbLGegwp/cLO2z/EIjfluhWIw4d0axdt1B5Q36zfyxfwTF/7Qd8X563UzTttrr6ZzTAMWvIRQg==",
       "type": "package",
-      "path": "realtaiizor/3.8.1.5",
+      "path": "realtaiizor/3.8.1.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1523,6 +1712,8 @@
         "Taiizor.png",
         "lib/net10.0-windows7.0/ReaLTaiizor.dll",
         "lib/net10.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net11.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net11.0-windows7.0/ReaLTaiizor.xml",
         "lib/net48/ReaLTaiizor.dll",
         "lib/net48/ReaLTaiizor.xml",
         "lib/net481/ReaLTaiizor.dll",
@@ -1537,39 +1728,58 @@
         "lib/net9.0-windows7.0/ReaLTaiizor.xml",
         "lib/netcoreapp3.1/ReaLTaiizor.dll",
         "lib/netcoreapp3.1/ReaLTaiizor.xml",
-        "realtaiizor.3.8.1.5.nupkg.sha512",
+        "realtaiizor.3.8.1.8.nupkg.sha512",
         "realtaiizor.nuspec"
       ]
     },
-    "System.Buffers/4.5.1": {
-      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+    "System.Buffers/4.6.1": {
+      "sha512": "N8GXpmiLMtljq7gwvyS+1QvKT/W2J8sNAvx+HVg4NGmsG/H+2k/y9QI23auLJRterrzCiDH+IWAw4V/GPwsMlw==",
       "type": "package",
-      "path": "system.buffers/4.5.1",
+      "path": "system.buffers/4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Buffers.dll",
-        "lib/net461/System.Buffers.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Buffers.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Buffers.dll",
+        "lib/net462/System.Buffers.xml",
         "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "lib/netstandard1.1/System.Buffers.xml",
         "lib/netstandard2.0/System.Buffers.dll",
         "lib/netstandard2.0/System.Buffers.xml",
-        "lib/uap10.0.16299/_._",
-        "ref/net45/System.Buffers.dll",
-        "ref/net45/System.Buffers.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.1/System.Buffers.dll",
-        "ref/netstandard1.1/System.Buffers.xml",
-        "ref/netstandard2.0/System.Buffers.dll",
-        "ref/netstandard2.0/System.Buffers.xml",
-        "ref/uap10.0.16299/_._",
-        "system.buffers.4.5.1.nupkg.sha512",
-        "system.buffers.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "lib/netstandard2.1/_._",
+        "system.buffers.4.6.1.nupkg.sha512",
+        "system.buffers.nuspec"
+      ]
+    },
+    "System.Collections.Immutable/10.0.7": {
+      "sha512": "0Ti4Jv1ga3eurH5HaCVsPybcBl+08YfzM9smqAJzHvqV494xK+0pSbytGrMTWhph+zsyKIaoGNiR5u3by5bj+A==",
+      "type": "package",
+      "path": "system.collections.immutable/10.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Collections.Immutable.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
+        "lib/net10.0/System.Collections.Immutable.dll",
+        "lib/net10.0/System.Collections.Immutable.xml",
+        "lib/net462/System.Collections.Immutable.dll",
+        "lib/net462/System.Collections.Immutable.xml",
+        "lib/net8.0/System.Collections.Immutable.dll",
+        "lib/net8.0/System.Collections.Immutable.xml",
+        "lib/net9.0/System.Collections.Immutable.dll",
+        "lib/net9.0/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "system.collections.immutable.10.0.7.nupkg.sha512",
+        "system.collections.immutable.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.ComponentModel.Annotations/5.0.0": {
@@ -1690,141 +1900,162 @@
         "version.txt"
       ]
     },
-    "System.Memory/4.5.5": {
-      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+    "System.Formats.Nrbf/10.0.7": {
+      "sha512": "KdAyjREL9DoP79pFtgVnLUB2hf7IexQaTWnUPssgyXX/t0X6az2irs24k/KoZBPdTNdkPseLoYrb8eUk1RYHuQ==",
       "type": "package",
-      "path": "system.memory/4.5.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.5.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Numerics.Vectors/4.5.0": {
-      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
-      "type": "package",
-      "path": "system.numerics.vectors/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Numerics.Vectors.dll",
-        "lib/net46/System.Numerics.Vectors.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.Numerics.Vectors.dll",
-        "lib/netstandard1.0/System.Numerics.Vectors.xml",
-        "lib/netstandard2.0/System.Numerics.Vectors.dll",
-        "lib/netstandard2.0/System.Numerics.Vectors.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/System.Numerics.Vectors.dll",
-        "ref/net45/System.Numerics.Vectors.xml",
-        "ref/net46/System.Numerics.Vectors.dll",
-        "ref/net46/System.Numerics.Vectors.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.0/System.Numerics.Vectors.dll",
-        "ref/netstandard1.0/System.Numerics.Vectors.xml",
-        "ref/netstandard2.0/System.Numerics.Vectors.dll",
-        "ref/netstandard2.0/System.Numerics.Vectors.xml",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.numerics.vectors.4.5.0.nupkg.sha512",
-        "system.numerics.vectors.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Resources.Extensions/8.0.0": {
-      "sha512": "psnQ6GRQOvt+evda5C4nD5EuV49mz2Tv0DD2JDVDEbE/TKoMukxSkGJcsBJ0pajpPuFRr67syFYlkJ4Wj6A5Zw==",
-      "type": "package",
-      "path": "system.resources.extensions/8.0.0",
+      "path": "system.formats.nrbf/10.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Formats.Nrbf.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Formats.Nrbf.targets",
+        "lib/net10.0/System.Formats.Nrbf.dll",
+        "lib/net10.0/System.Formats.Nrbf.xml",
+        "lib/net462/System.Formats.Nrbf.dll",
+        "lib/net462/System.Formats.Nrbf.xml",
+        "lib/net8.0/System.Formats.Nrbf.dll",
+        "lib/net8.0/System.Formats.Nrbf.xml",
+        "lib/net9.0/System.Formats.Nrbf.dll",
+        "lib/net9.0/System.Formats.Nrbf.xml",
+        "lib/netstandard2.0/System.Formats.Nrbf.dll",
+        "lib/netstandard2.0/System.Formats.Nrbf.xml",
+        "system.formats.nrbf.10.0.7.nupkg.sha512",
+        "system.formats.nrbf.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory/4.6.3": {
+      "sha512": "qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
+      "type": "package",
+      "path": "system.memory/4.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Memory.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Memory.dll",
+        "lib/net462/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "lib/netstandard2.1/_._",
+        "system.memory.4.6.3.nupkg.sha512",
+        "system.memory.nuspec"
+      ]
+    },
+    "System.Numerics.Vectors/4.6.1": {
+      "sha512": "sQxefTnhagrhoq2ReR0D/6K0zJcr9Hrd6kikeXsA1I8kOCboTavcUC4r7TSfpKFeE163uMuxZcyfO1mGO3EN8Q==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Numerics.Vectors.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Numerics.Vectors.dll",
+        "lib/net462/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.1/_._",
+        "system.numerics.vectors.4.6.1.nupkg.sha512",
+        "system.numerics.vectors.nuspec"
+      ]
+    },
+    "System.Reflection.Metadata/10.0.7": {
+      "sha512": "FEBU/i3gHeleqayWrbWieI5MlepDBTcjAxMzjGbK7FwGtlpxGSU1Lt11W1/o4ExdqsNtboiVhT5s4kNtH3eqvw==",
+      "type": "package",
+      "path": "system.reflection.metadata/10.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Reflection.Metadata.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Reflection.Metadata.targets",
+        "lib/net10.0/System.Reflection.Metadata.dll",
+        "lib/net10.0/System.Reflection.Metadata.xml",
+        "lib/net462/System.Reflection.Metadata.dll",
+        "lib/net462/System.Reflection.Metadata.xml",
+        "lib/net8.0/System.Reflection.Metadata.dll",
+        "lib/net8.0/System.Reflection.Metadata.xml",
+        "lib/net9.0/System.Reflection.Metadata.dll",
+        "lib/net9.0/System.Reflection.Metadata.xml",
+        "lib/netstandard2.0/System.Reflection.Metadata.dll",
+        "lib/netstandard2.0/System.Reflection.Metadata.xml",
+        "system.reflection.metadata.10.0.7.nupkg.sha512",
+        "system.reflection.metadata.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Resources.Extensions/10.0.7": {
+      "sha512": "NyIAL59AYqHU84yTYakeszxZ5xDUFAOv23wrpGtqvp4+evc7ouUK5Udg+y/r6ikLIvLVpmoVB5yn/q7ysg29AQ==",
+      "type": "package",
+      "path": "system.resources.extensions/10.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Resources.Extensions.targets",
         "buildTransitive/net462/System.Resources.Extensions.targets",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Resources.Extensions.targets",
+        "lib/net10.0/System.Resources.Extensions.dll",
+        "lib/net10.0/System.Resources.Extensions.xml",
         "lib/net462/System.Resources.Extensions.dll",
         "lib/net462/System.Resources.Extensions.xml",
-        "lib/net6.0/System.Resources.Extensions.dll",
-        "lib/net6.0/System.Resources.Extensions.xml",
-        "lib/net7.0/System.Resources.Extensions.dll",
-        "lib/net7.0/System.Resources.Extensions.xml",
         "lib/net8.0/System.Resources.Extensions.dll",
         "lib/net8.0/System.Resources.Extensions.xml",
+        "lib/net9.0/System.Resources.Extensions.dll",
+        "lib/net9.0/System.Resources.Extensions.xml",
         "lib/netstandard2.0/System.Resources.Extensions.dll",
         "lib/netstandard2.0/System.Resources.Extensions.xml",
-        "system.resources.extensions.8.0.0.nupkg.sha512",
+        "system.resources.extensions.10.0.7.nupkg.sha512",
         "system.resources.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
-      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+    "System.Runtime.CompilerServices.Unsafe/6.1.2": {
+      "sha512": "2hBr6zdbIBTDE3EhK7NSVNdX58uTK6iHW/P/Axmm9sl1xoGSLqDvMtpecn226TNwHByFokYwJmt/aQQNlO5CRw==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "path": "system.runtime.compilerservices.unsafe/6.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "lib/net462/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net462/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net7.0/_._",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.runtime.compilerservices.unsafe.6.1.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec"
       ]
     },
-    "System.Security.Cryptography.Xml/8.0.2": {
-      "sha512": "aDM/wm0ZGEZ6ZYJLzgqjp2FZdHbDHh6/OmpGfb7AdZ105zYmPn/83JRU2xLIbwgoNz9U1SLUTJN0v5th3qmvjA==",
+    "System.Security.Cryptography.Xml/8.0.3": {
+      "sha512": "1cHAWDYwOyyoRy+nxS7/Ro/Zcio6i5yHoIJ6xUA+fU8lNu4yGQgja5dEovAxBVud3RnfwRVWOl0B2vr+9LP/mg==",
       "type": "package",
-      "path": "system.security.cryptography.xml/8.0.2",
+      "path": "system.security.cryptography.xml/8.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1845,7 +2076,7 @@
         "lib/net8.0/System.Security.Cryptography.Xml.xml",
         "lib/netstandard2.0/System.Security.Cryptography.Xml.dll",
         "lib/netstandard2.0/System.Security.Cryptography.Xml.xml",
-        "system.security.cryptography.xml.8.0.2.nupkg.sha512",
+        "system.security.cryptography.xml.8.0.3.nupkg.sha512",
         "system.security.cryptography.xml.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1887,48 +2118,30 @@
         "version.txt"
       ]
     },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+    "System.ValueTuple/4.6.2": {
+      "sha512": "yQgmjfFximrNm9LIV3mL6T5MzjeC+epeE5rl4hXxAlYmxby7RM1dPSkIKXk9HNkl6G54h2JHOmLD46+Pey+IRg==",
       "type": "package",
-      "path": "system.valuetuple/4.5.0",
+      "path": "system.valuetuple/4.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "build/net471/System.ValueTuple.targets",
+        "build/net471/ValueTupleFrameworkList.xml",
+        "buildTransitive/net461/System.ValueTuple.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net471/System.ValueTuple.targets",
+        "buildTransitive/net471/ValueTupleFrameworkList.xml",
+        "lib/net462/System.ValueTuple.dll",
+        "lib/net462/System.ValueTuple.xml",
         "lib/net47/System.ValueTuple.dll",
         "lib/net47/System.ValueTuple.xml",
+        "lib/net471/_._",
         "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
         "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.valuetuple.4.6.2.nupkg.sha512",
+        "system.valuetuple.nuspec"
       ]
     },
     "Tesseract/5.2.0": {
@@ -1954,12 +2167,12 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "DocumentFormat.OpenXml >= 3.4.1",
-      "EPPlus >= 8.4.2",
-      "ReaLTaiizor >= 3.8.1.5",
-      "System.Resources.Extensions >= 8.0.0",
+      "DocumentFormat.OpenXml >= 3.5.1",
+      "EPPlus >= 8.5.3",
+      "ReaLTaiizor >= 3.8.1.8",
+      "System.Resources.Extensions >= 10.0.7",
       "Tesseract >= 5.2.0",
-      "itext7 >= 9.5.0"
+      "itext7 >= 9.6.0"
     ]
   },
   "packageFolders": {
@@ -2015,19 +2228,19 @@
         "dependencies": {
           "DocumentFormat.OpenXml": {
             "target": "Package",
-            "version": "[3.4.1, )"
+            "version": "[3.5.1, )"
           },
           "EPPlus": {
             "target": "Package",
-            "version": "[8.4.2, )"
+            "version": "[8.5.3, )"
           },
           "ReaLTaiizor": {
             "target": "Package",
-            "version": "[3.8.1.5, )"
+            "version": "[3.8.1.8, )"
           },
           "System.Resources.Extensions": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[10.0.7, )"
           },
           "Tesseract": {
             "target": "Package",
@@ -2035,7 +2248,7 @@
           },
           "itext7": {
             "target": "Package",
-            "version": "[9.5.0, )"
+            "version": "[9.6.0, )"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303\\RuntimeIdentifierGraph.json"

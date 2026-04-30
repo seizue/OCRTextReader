@@ -2,6 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)tesseract\5.2.0\build\Tesseract.targets" Condition="Exists('$(NuGetPackageRoot)tesseract\5.2.0\build\Tesseract.targets')" />
-    <Import Project="$(NuGetPackageRoot)system.resources.extensions\8.0.0\buildTransitive\net462\System.Resources.Extensions.targets" Condition="Exists('$(NuGetPackageRoot)system.resources.extensions\8.0.0\buildTransitive\net462\System.Resources.Extensions.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.valuetuple\4.6.2\buildTransitive\net471\System.ValueTuple.targets" Condition="Exists('$(NuGetPackageRoot)system.valuetuple\4.6.2\buildTransitive\net471\System.ValueTuple.targets')" />
+    <Import Project="$(NuGetPackageRoot)system.resources.extensions\10.0.7\buildTransitive\net462\System.Resources.Extensions.targets" Condition="Exists('$(NuGetPackageRoot)system.resources.extensions\10.0.7\buildTransitive\net462\System.Resources.Extensions.targets')" />
   </ImportGroup>
 </Project>

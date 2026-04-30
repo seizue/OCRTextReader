@@ -13,6 +13,11 @@ namespace OCRTextReader
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Ensure Tesseract is installed before launching the main window.
+            // If not found, the user is prompted to download and install it automatically.
+            TesseractInstaller.EnsureInstalled();
+
             Application.Run(new Main());
         }
     }

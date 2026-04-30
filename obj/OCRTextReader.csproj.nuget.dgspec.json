@@ -53,19 +53,19 @@
           "dependencies": {
             "DocumentFormat.OpenXml": {
               "target": "Package",
-              "version": "[3.4.1, )"
+              "version": "[3.5.1, )"
             },
             "EPPlus": {
               "target": "Package",
-              "version": "[8.4.2, )"
+              "version": "[8.5.3, )"
             },
             "ReaLTaiizor": {
               "target": "Package",
-              "version": "[3.8.1.5, )"
+              "version": "[3.8.1.8, )"
             },
             "System.Resources.Extensions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[10.0.7, )"
             },
             "Tesseract": {
               "target": "Package",
@@ -73,7 +73,7 @@
             },
             "itext7": {
               "target": "Package",
-              "version": "[9.5.0, )"
+              "version": "[9.6.0, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303\\RuntimeIdentifierGraph.json"
