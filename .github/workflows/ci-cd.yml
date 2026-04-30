@@ -64,15 +64,41 @@ jobs:
     - name: Build Release
       run: msbuild ${{ env.PROJECT_PATH }} /p:Configuration=Release /p:Platform="Any CPU" /m
 
-    - name: Create ZIP archive
+    - name: Generate release notes
       run: |
         $tag = "${{ github.event.release.tag_name }}"
-        $zipName = "OCRTextReader-$tag.zip"
-        Compress-Archive -Path bin/Release/net48/* -DestinationPath $zipName
-        echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
+        $notes = gh api repos/${{ github.repository }}/releases/generate-notes `
+          -f tag_name="$tag" `
+          --jq '.body'
+        gh release edit "$tag" --notes "$notes"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Stage release assets
+      run: |
+        $tag = "${{ github.event.release.tag_name }}"
+        $version = $tag -replace '^v', ''
+        $outDir = "release-assets"
+        New-Item -ItemType Directory -Path $outDir | Out-Null
+
+        # Copy the main exe with a versioned name
+        Copy-Item "bin\Release\net48\OCRTextReader.exe" "$outDir\OCRTextReader-$version.exe"
+
+        # Create a ZIP of the full output (exe + all dependencies)
+        Compress-Archive -Path "bin\Release\net48\*" -DestinationPath "$outDir\OCRTextReader-$version.zip"
+
+        echo "TAG=$tag" >> $env:GITHUB_ENV
+        echo "VERSION=$version" >> $env:GITHUB_ENV
+        echo "OUT_DIR=$outDir" >> $env:GITHUB_ENV
+
+    - name: Upload EXE to release
+      run: |
+        gh release upload "${{ env.TAG }}" "${{ env.OUT_DIR }}\OCRTextReader-${{ env.VERSION }}.exe" --clobber
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload ZIP to release
       run: |
-        gh release upload "${{ github.event.release.tag_name }}" "${{ env.ZIP_NAME }}" --clobber
+        gh release upload "${{ env.TAG }}" "${{ env.OUT_DIR }}\OCRTextReader-${{ env.VERSION }}.zip" --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

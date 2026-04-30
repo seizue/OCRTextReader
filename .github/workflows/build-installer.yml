@@ -34,7 +34,7 @@ jobs:
 
     - name: Create ZIP archive
       run: |
-        $version = "${{ github.event.inputs.version }}"
+        $version = "${{ github.event.inputs.version }}" -replace '^v', ''
         $zipName = "OCRTextReader-$version.zip"
         Compress-Archive -Path bin/Release/net48/* -DestinationPath $zipName
         echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
