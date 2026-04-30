@@ -64,15 +64,29 @@ jobs:
       run: nuget restore ${{ env.PROJECT_PATH }}
 
     - name: Build Release
-      run: msbuild ${{ env.PROJECT_PATH }} /p:Configuration=Release /p:Platform="Any CPU" /m
+      run: msbuild ${{ env.PROJECT_PATH }} /p:Configuration=Release /p:Platform="Any CPU" /p:OutputPath="bin\Release\net48" /m
+
+    - name: Find build output
+      run: |
+        Write-Host "=== Searching for OCRTextReader.exe ==="
+        Get-ChildItem -Path . -Filter "OCRTextReader.exe" -Recurse -ErrorAction SilentlyContinue |
+          Select-Object FullName
+        Write-Host "=== bin folder contents ==="
+        Get-ChildItem -Path "bin" -Recurse -ErrorAction SilentlyContinue |
+          Select-Object FullName
 
     - name: Stage release assets
       run: |
         $version = "${{ github.ref_name }}" -replace '^v', ''
         $outDir = "release-assets"
+        $buildOut = "bin\Release\net48"
+
+        Write-Host "Build output contents:"
+        Get-ChildItem $buildOut -ErrorAction SilentlyContinue | Select-Object Name
+
         New-Item -ItemType Directory -Path $outDir | Out-Null
-        Copy-Item "bin\Release\net48\OCRTextReader.exe" "$outDir\OCRTextReader-$version.exe"
-        Compress-Archive -Path "bin\Release\net48\*" -DestinationPath "$outDir\OCRTextReader-$version.zip"
+        Copy-Item "$buildOut\OCRTextReader.exe" "$outDir\OCRTextReader-$version.exe"
+        Compress-Archive -Path "$buildOut\*" -DestinationPath "$outDir\OCRTextReader-$version.zip"
         echo "VERSION=$version" >> $env:GITHUB_ENV
         echo "OUT_DIR=$outDir" >> $env:GITHUB_ENV
 

@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -156,15 +172,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OCRTextReader"
-        "ProductCode" = "8:{9735E0ED-9839-4026-A0C7-E0FD795A94EA}"
-        "PackageCode" = "8:{6D9702B3-FE3E-46ED-A3AF-50559BD7AE09}"
+        "ProductCode" = "8:{12523319-132B-47F2-88B4-649225C45431}"
+        "PackageCode" = "8:{2EE993C4-87A3-41A4-BD4A-DECFA97A9AD2}"
         "UpgradeCode" = "8:{746CD71B-1C05-4202-8181-826EAE87BEA2}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:OCRTextReader"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/seizue/OCRTextReader/issues"
@@ -720,7 +736,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1EC66A8A213F4560BD049BA05DD9B99D"
             {
-            "SourcePath" = "8:..\\obj\\Release\\net48\\OCRTextReader.exe"
+            "SourcePath" = "8:..\\obj\\Debug\\net48\\OCRTextReader.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9B17971B283942F887C6D3FF97FB1C52"
