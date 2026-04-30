@@ -60,9 +60,13 @@ namespace OCRTextReader
 
                 return text.ToString().Trim();
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                throw new Exception($"Failed to extract text from PDF: {ex.Message}", ex);
+                throw new InvalidOperationException($"Failed to extract text from PDF: {ex.Message}", ex);
+            }
+            catch (iText.Kernel.Exceptions.PdfException ex)
+            {
+                throw new InvalidOperationException($"Failed to extract text from PDF: {ex.Message}", ex);
             }
         }
 
@@ -113,9 +117,13 @@ namespace OCRTextReader
 
                 return text.ToString().Trim();
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                throw new Exception($"Failed to extract text from Excel: {ex.Message}", ex);
+                throw new InvalidOperationException($"Failed to extract text from Excel: {ex.Message}", ex);
+            }
+            catch (InvalidDataException ex)
+            {
+                throw new InvalidOperationException($"Failed to extract text from Excel: {ex.Message}", ex);
             }
         }
 
@@ -160,9 +168,13 @@ namespace OCRTextReader
             {
                 throw;
             }
-            catch (Exception ex)
+            catch (IOException ex)
             {
-                throw new Exception($"Failed to extract text from PowerPoint: {ex.Message}", ex);
+                throw new InvalidOperationException($"Failed to extract text from PowerPoint: {ex.Message}", ex);
+            }
+            catch (InvalidDataException ex)
+            {
+                throw new InvalidOperationException($"Failed to extract text from PowerPoint: {ex.Message}", ex);
             }
         }
     }

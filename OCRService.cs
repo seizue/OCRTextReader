@@ -18,8 +18,10 @@ namespace OCRTextReader
 
         public OCRService()
         {
+            // #39: PossiblePaths are hardcoded absolute strings — no Path.Combine needed,
+            // no risk of a rooted segment silently dropping earlier arguments
             tessdataPath = PossiblePaths.FirstOrDefault(Directory.Exists)
-                ?? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
+                ?? AppDomain.CurrentDomain.BaseDirectory + @"tessdata";
         }
 
         public async Task<string> ExtractTextAsync(string imagePath)
@@ -43,13 +45,20 @@ namespace OCRTextReader
                     }
                 }
             }
-            catch (Exception ex)
+            catch (TesseractException ex)
             {
-                throw new Exception($"OCR processing failed: {ex.Message}\n\n" +
+                throw new InvalidOperationException(
+                    $"OCR processing failed: {ex.Message}\n\n" +
                     "Please ensure:\n" +
                     "1. Tesseract OCR is installed on your system\n" +
                     "2. English language data files (eng.traineddata) are available in the tessdata folder\n" +
                     "3. The tessdata folder path is correct", ex);
+            }
+            catch (IOException ex)
+            {
+                throw new InvalidOperationException(
+                    $"OCR processing failed: {ex.Message}\n\n" +
+                    "Please ensure the image file is accessible and not in use.", ex);
             }
         }
     }

@@ -45,7 +45,14 @@ namespace OCRTextReader
                         lblStatus.ForeColor = Color.MediumSeaGreen;
                     }
                 }
-                catch (Exception ex)
+                catch (IOException ex)
+                {
+                    MessageBox.Show($"Error loading file: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblStatus.Text = "Error loading file.";
+                    lblStatus.ForeColor = Color.Salmon;
+                }
+                catch (OutOfMemoryException ex)
                 {
                     MessageBox.Show($"Error loading file: {ex.Message}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -125,7 +132,7 @@ namespace OCRTextReader
                     lblStatus.ForeColor = Color.LightGoldenrodYellow;
                 }
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
                 string errorMessage = extension is ".pdf" or ".xlsx" or ".pptx"
                     ? $"An error occurred while extracting text from the {fileType} document.\n\nDetails: {ex.Message}"
@@ -134,6 +141,20 @@ namespace OCRTextReader
                       "See README.md for installation instructions.";
 
                 MessageBox.Show(errorMessage, "Extraction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblStatus.Text = "Error during text extraction.";
+                lblStatus.ForeColor = Color.Salmon;
+            }
+            catch (NotSupportedException ex)
+            {
+                MessageBox.Show($"Unsupported file format.\n\nDetails: {ex.Message}",
+                    "Extraction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblStatus.Text = "Error during text extraction.";
+                lblStatus.ForeColor = Color.Salmon;
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"File access error.\n\nDetails: {ex.Message}",
+                    "Extraction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblStatus.Text = "Error during text extraction.";
                 lblStatus.ForeColor = Color.Salmon;
             }
@@ -170,7 +191,14 @@ namespace OCRTextReader
                     MessageBox.Show($"Text successfully exported to:\n{saveFileDialog.FileName}",
                         "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                catch (IOException ex)
+                {
+                    MessageBox.Show($"Error exporting to Word: {ex.Message}",
+                        "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblStatus.Text = "Error exporting to Word.";
+                    lblStatus.ForeColor = Color.Salmon;
+                }
+                catch (InvalidOperationException ex)
                 {
                     MessageBox.Show($"Error exporting to Word: {ex.Message}",
                         "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

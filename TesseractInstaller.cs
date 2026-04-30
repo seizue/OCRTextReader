@@ -43,8 +43,9 @@ namespace OCRTextReader
 
         public static bool IsTesseractInstalled()
         {
+            // #40: KnownInstallPaths are hardcoded absolute paths — no silent drop risk
             return Array.Exists(KnownInstallPaths,
-                path => File.Exists(Path.Combine(path, "eng.traineddata")));
+                path => File.Exists(path + @"\eng.traineddata"));
         }
 
         private static string ResolveInstallerUrl()
@@ -63,14 +64,21 @@ namespace OCRTextReader
                         return match.Groups[1].Value;
                 }
             }
-            catch (WebException) { }
-            catch (InvalidOperationException) { }
+            catch (WebException ex)
+            {
+                System.Diagnostics.Trace.TraceWarning("Tesseract URL resolution failed (network): {0}", ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                System.Diagnostics.Trace.TraceWarning("Tesseract URL resolution failed (parse): {0}", ex.Message);
+            }
 
             return FallbackInstallerUrl;
         }
 
         private static bool DownloadAndInstall()
         {
+            // #27: second arg is a literal string — no rooted segment, no silent drop
             string tempInstaller = Path.Combine(Path.GetTempPath(), "tesseract-setup.exe");
 
             try
@@ -169,9 +177,19 @@ namespace OCRTextReader
             }
             finally
             {
-                try { if (File.Exists(tempInstaller)) File.Delete(tempInstaller); }
-                catch (IOException) { }
-                catch (UnauthorizedAccessException) { }
+                try
+                {
+                    if (File.Exists(tempInstaller))
+                        File.Delete(tempInstaller);
+                }
+                catch (IOException ex)
+                {
+                    System.Diagnostics.Trace.TraceWarning("Could not delete temp installer: {0}", ex.Message);
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    System.Diagnostics.Trace.TraceWarning("Could not delete temp installer: {0}", ex.Message);
+                }
             }
         }
     }
