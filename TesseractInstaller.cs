@@ -78,8 +78,7 @@ namespace OCRTextReader
 
         private static bool DownloadAndInstall()
         {
-            // #27: second arg is a literal string — no rooted segment, no silent drop
-            string tempInstaller = Path.Combine(Path.GetTempPath(), "tesseract-setup.exe");
+            string tempInstaller = Path.GetTempPath() + "tesseract-setup.exe";
 
             try
             {

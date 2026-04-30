@@ -3,21 +3,13 @@ using System.Windows.Forms;
 
 namespace OCRTextReader
 {
-    public class DownloadProgressForm : Form
+    public sealed class DownloadProgressForm : Form
     {
         private readonly ProgressBar progressBar;
         private readonly Label lblMessage;
 
         public DownloadProgressForm()
         {
-            Text = "Installing Tesseract OCR";
-            Size = new Size(420, 120);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            StartPosition = FormStartPosition.CenterScreen;
-            ControlBox = false;
-            MaximizeBox = false;
-            MinimizeBox = false;
-
             lblMessage = new Label
             {
                 Text = "Preparing download...",
@@ -36,8 +28,17 @@ namespace OCRTextReader
                 Style = ProgressBarStyle.Continuous
             };
 
+            SuspendLayout();
+            Text = "Installing Tesseract OCR";
+            Size = new Size(420, 120);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            StartPosition = FormStartPosition.CenterScreen;
+            ControlBox = false;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Controls.Add(lblMessage);
             Controls.Add(progressBar);
+            ResumeLayout(false);
         }
 
         public void UpdateProgress(int percent, string message)
