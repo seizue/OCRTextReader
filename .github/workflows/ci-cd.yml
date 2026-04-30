@@ -93,30 +93,28 @@ jobs:
         Compress-Archive -Path "bin\Release\net48\*" -DestinationPath "$outDir\OCRTextReader-$version.zip"
         echo "OUT_DIR=$outDir" >> $env:GITHUB_ENV
 
-    - name: Sign executable
+    - name: Sign installer
+      if: ${{ secrets.SIGNING_CERT_BASE64 != '' }}
+      env:
+        SIGNING_CERT_BASE64: ${{ secrets.SIGNING_CERT_BASE64 }}
+        SIGNING_CERT_PASSWORD: ${{ secrets.SIGNING_CERT_PASSWORD }}
       run: |
-        # Decode cert from secret and write to disk
-        $certBytes = [Convert]::FromBase64String("${{ secrets.SIGNING_CERT_BASE64 }}")
+        $certBytes = [Convert]::FromBase64String($env:SIGNING_CERT_BASE64)
         [IO.File]::WriteAllBytes("signing.pfx", $certBytes)
 
-        # Find signtool
         $signtool = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" `
           -Recurse -Filter "signtool.exe" -ErrorAction SilentlyContinue |
           Where-Object { $_.FullName -match "x64" } |
           Select-Object -First 1 -ExpandProperty FullName
 
-        Write-Host "Using signtool: $signtool"
-
-        # Sign the exe
         & $signtool sign `
           /f "signing.pfx" `
-          /p "${{ secrets.SIGNING_CERT_PASSWORD }}" `
+          /p $env:SIGNING_CERT_PASSWORD `
           /fd SHA256 `
           /tr http://timestamp.digicert.com `
           /td SHA256 `
-          "${{ env.OUT_DIR }}\OCRTextReader-${{ env.VERSION }}.exe"
+          "${{ env.OUT_DIR }}\OCRTextReader-${{ env.VERSION }}-setup.exe"
 
-        # Clean up cert file
         Remove-Item "signing.pfx" -Force
 
     - name: Create GitHub Release and upload assets
