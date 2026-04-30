@@ -2,40 +2,46 @@ name: Build Installer
 
 on:
   workflow_dispatch:
-  release:
-    types: [ created ]
+    inputs:
+      version:
+        description: 'Version number (e.g. 1.0.1)'
+        required: true
+        default: '1.0.0'
 
 env:
-  DOTNET_VERSION: '8.0.x'
   PROJECT_PATH: 'OCRTextReader.csproj'
-  BUILD_CONFIGURATION: 'Release'
 
 jobs:
   build-installer:
-    name: Build Windows Installer
+    name: Build & Package
     runs-on: windows-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
-        
-    - name: Restore dependencies
-      run: dotnet restore ${{ env.PROJECT_PATH }}
-      
-    - name: Publish application
-      run: dotnet publish ${{ env.PROJECT_PATH }} --configuration ${{ env.BUILD_CONFIGURATION }} --output ./publish --self-contained true --runtime win-x64
-      
-    - name: Create portable ZIP
-      run: Compress-Archive -Path ./publish/* -DestinationPath OCRTextReader-Portable.zip
-      
-    - name: Upload installer artifact
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
+
+    - name: Restore NuGet packages
+      run: nuget restore ${{ env.PROJECT_PATH }}
+
+    - name: Build Release
+      run: msbuild ${{ env.PROJECT_PATH }} /p:Configuration=Release /p:Platform="Any CPU" /m
+
+    - name: Create ZIP archive
+      run: |
+        $version = "${{ github.event.inputs.version }}"
+        $zipName = "OCRTextReader-$version.zip"
+        Compress-Archive -Path bin/Release/net48/* -DestinationPath $zipName
+        echo "ZIP_NAME=$zipName" >> $env:GITHUB_ENV
+
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: OCRTextReader-Installer
-        path: OCRTextReader-Portable.zip
+        name: OCRTextReader-${{ github.event.inputs.version }}
+        path: ${{ env.ZIP_NAME }}
         retention-days: 30
