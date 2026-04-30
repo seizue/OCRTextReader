@@ -3,13 +3,10 @@ using System.Windows.Forms;
 
 namespace OCRTextReader
 {
-    /// <summary>
-    /// Simple progress dialog shown while downloading the Tesseract installer.
-    /// </summary>
     public class DownloadProgressForm : Form
     {
-        private ProgressBar progressBar;
-        private Label lblMessage;
+        private readonly ProgressBar progressBar;
+        private readonly Label lblMessage;
 
         public DownloadProgressForm()
         {

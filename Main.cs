@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OCRTextReader
@@ -16,12 +10,11 @@ namespace OCRTextReader
     {
         private string selectedImagePath = string.Empty;
         private string extractedText = string.Empty;
+
         public Main()
         {
             InitializeComponent();
             txtExtractedText.SelectionStart = txtExtractedText.Text.Length;
-
-            // Initialize button states
             btnProcessOCR.Enabled = false;
             btnExportToWord.Enabled = false;
         }
@@ -37,18 +30,15 @@ namespace OCRTextReader
                 {
                     string extension = Path.GetExtension(selectedImagePath).ToLowerInvariant();
 
-                    // Try to load and display image (for image files only)
                     if (extension is ".jpg" or ".jpeg" or ".png" or ".bmp" or ".gif" or ".tiff")
                     {
-                        Image img = Image.FromFile(selectedImagePath);
-                        pictureBox.Image = img;
+                        pictureBox.Image = Image.FromFile(selectedImagePath);
                         btnProcessOCR.Enabled = true;
                         lblStatus.Text = "Image loaded. Click 'Extract Text' to process.";
                         lblStatus.ForeColor = Color.MediumSeaGreen;
                     }
                     else
                     {
-                        // For PDF, Excel, PowerPoint - show placeholder or file icon
                         pictureBox.Image = Properties.Resources.image_document_240px;
                         btnProcessOCR.Enabled = true;
                         lblStatus.Text = $"{extension.ToUpperInvariant().TrimStart('.')} file selected. Click 'Extract Text' to process.";
@@ -90,14 +80,10 @@ namespace OCRTextReader
 
             try
             {
-
-                // Determine which service to use based on file type
                 if (extension is ".pdf" or ".xlsx" or ".pptx")
                 {
-                    // Use document text extractor for PDF, Excel, PowerPoint
-                    DocumentTextExtractorService documentService = new DocumentTextExtractorService();
+                    var documentService = new DocumentTextExtractorService();
                     extractedText = await documentService.ExtractTextAsync(selectedImagePath);
-
                 }
                 else if (extension is ".xls" or ".ppt")
                 {
@@ -121,10 +107,8 @@ namespace OCRTextReader
                 }
                 else
                 {
-                    // Use OCR for image files
-                    OCRService ocrService = new OCRService();
+                    var ocrService = new OCRService();
                     extractedText = await ocrService.ExtractTextAsync(selectedImagePath);
-
                 }
 
                 if (!string.IsNullOrEmpty(extractedText))
@@ -143,21 +127,13 @@ namespace OCRTextReader
             }
             catch (Exception ex)
             {
-                string errorTitle = "Extraction Error";
-                string errorMessage;
+                string errorMessage = extension is ".pdf" or ".xlsx" or ".pptx"
+                    ? $"An error occurred while extracting text from the {fileType} document.\n\nDetails: {ex.Message}"
+                    : $"An error occurred during OCR processing.\n\nDetails: {ex.Message}\n\n" +
+                      "Make sure Tesseract data files are installed.\n" +
+                      "See README.md for installation instructions.";
 
-                if (extension is ".pdf" or ".xlsx" or ".pptx")
-                {
-                    errorMessage = $"An error occurred while extracting text from the {fileType} document.\n\nDetails: {ex.Message}";
-                }
-                else
-                {
-                    errorMessage = $"An error occurred during OCR processing.\n\nDetails: {ex.Message}\n\n" +
-                                 "Make sure Tesseract data files are installed.\n" +
-                                 "See README.md for installation instructions.";
-                }
-
-                MessageBox.Show(errorMessage, errorTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(errorMessage, "Extraction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblStatus.Text = "Error during text extraction.";
                 lblStatus.ForeColor = Color.Salmon;
             }
@@ -177,22 +153,15 @@ namespace OCRTextReader
                 return;
             }
 
-            // Set suggested filename based on source file
-            if (!string.IsNullOrEmpty(selectedImagePath))
-            {
-                string sourceFileName = Path.GetFileNameWithoutExtension(selectedImagePath);
-                saveFileDialog.FileName = $"{sourceFileName}_extracted.docx";
-            }
-            else
-            {
-                saveFileDialog.FileName = "extracted_text.docx";
-            }
+            saveFileDialog.FileName = !string.IsNullOrEmpty(selectedImagePath)
+                ? $"{Path.GetFileNameWithoutExtension(selectedImagePath)}_extracted.docx"
+                : "extracted_text.docx";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    WordExportService wordService = new WordExportService();
+                    var wordService = new WordExportService();
                     wordService.ExportToWord(extractedText, saveFileDialog.FileName,
                         Path.GetFileName(selectedImagePath));
 
@@ -230,11 +199,9 @@ namespace OCRTextReader
 
         private void btnGitHub_Click(object sender, EventArgs e)
         {
-            string url = "https://github.com/seizue/OCRTextReader";
-
             Process.Start(new ProcessStartInfo
             {
-                FileName = url,
+                FileName = "https://github.com/seizure/OCRTextReader",
                 UseShellExecute = true
             });
         }

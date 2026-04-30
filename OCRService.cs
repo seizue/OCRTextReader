@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Tesseract;
 
@@ -7,35 +8,18 @@ namespace OCRTextReader
 {
     public class OCRService
     {
-        private string tessdataPath;
+        private readonly string tessdataPath;
+
+        private static readonly string[] PossiblePaths = new[]
+        {
+            @"C:\Program Files\Tesseract-OCR\tessdata",
+            @"C:\Program Files (x86)\Tesseract-OCR\tessdata"
+        };
 
         public OCRService()
         {
-            // Try to find tessdata directory
-            // Common locations for Tesseract data files
-            string[] possiblePaths = new[]
-            {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata"),
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Tesseract-OCR", "tessdata"),
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Tesseract-OCR", "tessdata"),
-                @"C:\Program Files\Tesseract-OCR\tessdata",
-                @"C:\Program Files (x86)\Tesseract-OCR\tessdata"
-            };
-
-            foreach (var path in possiblePaths)
-            {
-                if (Directory.Exists(path))
-                {
-                    tessdataPath = path;
-                    break;
-                }
-            }
-
-            // If not found, use current directory
-            if (string.IsNullOrEmpty(tessdataPath))
-            {
-                tessdataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
-            }
+            tessdataPath = PossiblePaths.FirstOrDefault(Directory.Exists)
+                ?? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
         }
 
         public async Task<string> ExtractTextAsync(string imagePath)
@@ -49,17 +33,13 @@ namespace OCRTextReader
             {
                 using (var engine = new TesseractEngine(tessdataPath, "eng", EngineMode.Default))
                 {
-                    // Configure OCR settings for better accuracy
-                    engine.SetVariable("tessedit_char_whitelist", 
+                    engine.SetVariable("tessedit_char_whitelist",
                         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .,!?;:()[]{}\"'-_/@#$%&*+=<>|\\~`");
-                    
+
                     using (var img = Pix.LoadFromFile(imagePath))
+                    using (var page = engine.Process(img))
                     {
-                        using (var page = engine.Process(img))
-                        {
-                            string text = page.GetText();
-                            return text?.Trim() ?? string.Empty;
-                        }
+                        return page.GetText()?.Trim() ?? string.Empty;
                     }
                 }
             }
@@ -74,4 +54,3 @@ namespace OCRTextReader
         }
     }
 }
-

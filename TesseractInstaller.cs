@@ -9,26 +9,18 @@ namespace OCRTextReader
 {
     public static class TesseractInstaller
     {
-        // GitHub API — resolves the latest UB-Mannheim release dynamically
         private const string GitHubApiLatest =
             "https://api.github.com/repos/UB-Mannheim/tesseract/releases/latest";
 
-        // Fallback: known-good URL if the API call fails
         private const string FallbackInstallerUrl =
             "https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe";
 
         private static readonly string[] KnownInstallPaths = new[]
         {
-            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Tesseract-OCR", "tessdata"),
-            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Tesseract-OCR", "tessdata"),
             @"C:\Program Files\Tesseract-OCR\tessdata",
             @"C:\Program Files (x86)\Tesseract-OCR\tessdata"
         };
 
-        /// <summary>
-        /// Checks if Tesseract is installed. If not, prompts the user to install it automatically.
-        /// Returns true if Tesseract is available (already installed or just installed).
-        /// </summary>
         public static bool EnsureInstalled()
         {
             if (IsTesseractInstalled())
@@ -49,23 +41,12 @@ namespace OCRTextReader
             return DownloadAndInstall();
         }
 
-        /// <summary>
-        /// Returns true if eng.traineddata exists in any known Tesseract install path.
-        /// </summary>
         public static bool IsTesseractInstalled()
         {
-            foreach (var path in KnownInstallPaths)
-            {
-                if (File.Exists(Path.Combine(path, "eng.traineddata")))
-                    return true;
-            }
-            return false;
+            return Array.Exists(KnownInstallPaths,
+                path => File.Exists(Path.Combine(path, "eng.traineddata")));
         }
 
-        /// <summary>
-        /// Queries the GitHub API for the latest release and extracts the w64 setup .exe URL.
-        /// Falls back to the hardcoded URL if anything goes wrong.
-        /// </summary>
         private static string ResolveInstallerUrl()
         {
             try
@@ -75,8 +56,6 @@ namespace OCRTextReader
                     client.Headers.Add("User-Agent", "OCRTextReader");
                     string json = client.DownloadString(GitHubApiLatest);
 
-                    // Extract browser_download_url for the w64 setup exe using regex
-                    // (avoids a JSON parser dependency on net48)
                     var match = Regex.Match(json,
                         @"""browser_download_url""\s*:\s*""(https://github\.com/UB-Mannheim/tesseract/releases/download/[^""]*w64-setup[^""]*\.exe)""");
 
@@ -84,10 +63,8 @@ namespace OCRTextReader
                         return match.Groups[1].Value;
                 }
             }
-            catch
-            {
-                // Silently fall through to the fallback
-            }
+            catch (WebException) { }
+            catch (InvalidOperationException) { }
 
             return FallbackInstallerUrl;
         }
@@ -134,7 +111,6 @@ namespace OCRTextReader
                     progress.Close();
                 }
 
-                // Run the installer silently with elevation
                 var psi = new ProcessStartInfo
                 {
                     FileName = tempInstaller,
@@ -145,9 +121,8 @@ namespace OCRTextReader
 
                 var proc = Process.Start(psi);
                 if (proc == null)
-                    throw new Exception("Failed to start the installer process.");
+                    throw new InvalidOperationException("Failed to start the installer process.");
 
-                // Wait up to 3 minutes for the installer to finish
                 bool finished = proc.WaitForExit(180_000);
                 if (!finished)
                 {
@@ -170,19 +145,17 @@ namespace OCRTextReader
                         MessageBoxIcon.Information);
                     return true;
                 }
-                else
-                {
-                    MessageBox.Show(
-                        "The installer finished but Tesseract could not be detected.\n\n" +
-                        "Please try installing manually from:\n" +
-                        "https://github.com/UB-Mannheim/tesseract/wiki",
-                        "Installation Issue",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return false;
-                }
+
+                MessageBox.Show(
+                    "The installer finished but Tesseract could not be detected.\n\n" +
+                    "Please try installing manually from:\n" +
+                    "https://github.com/UB-Mannheim/tesseract/wiki",
+                    "Installation Issue",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is WebException || ex is InvalidOperationException || ex is IOException)
             {
                 MessageBox.Show(
                     $"Failed to install Tesseract automatically.\n\n" +
@@ -197,7 +170,8 @@ namespace OCRTextReader
             finally
             {
                 try { if (File.Exists(tempInstaller)) File.Delete(tempInstaller); }
-                catch { /* ignore cleanup errors */ }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
             }
         }
     }

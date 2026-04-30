@@ -14,11 +14,8 @@ namespace OCRTextReader
 {
     public class DocumentTextExtractorService
     {
-        // Static constructor to set EPPlus license once for the entire application
         static DocumentTextExtractorService()
         {
-            // Set EPPlus license for non-commercial personal use (EPPlus 8+)
-            // Replace "Your Name" with your actual name or organization name
             OfficeOpenXml.ExcelPackage.License.SetNonCommercialPersonal("OCRTextReader User");
         }
 
@@ -45,22 +42,19 @@ namespace OCRTextReader
         {
             try
             {
-                StringBuilder text = new StringBuilder();
+                var text = new StringBuilder();
 
-                using (PdfDocument pdfDoc = new PdfDocument(new PdfReader(filePath)))
+                using (var pdfDoc = new PdfDocument(new PdfReader(filePath)))
                 {
                     int numberOfPages = pdfDoc.GetNumberOfPages();
 
                     for (int pageNum = 1; pageNum <= numberOfPages; pageNum++)
                     {
                         PdfPage page = pdfDoc.GetPage(pageNum);
-                        ITextExtractionStrategy strategy = new SimpleTextExtractionStrategy();
-                        string pageText = PdfTextExtractor.GetTextFromPage(page, strategy);
-                        
+                        string pageText = PdfTextExtractor.GetTextFromPage(page, new SimpleTextExtractionStrategy());
+
                         if (!string.IsNullOrWhiteSpace(pageText))
-                        {
                             text.AppendLine(pageText);
-                        }
                     }
                 }
 
@@ -76,9 +70,10 @@ namespace OCRTextReader
         {
             try
             {
-                StringBuilder text = new StringBuilder();
+                var text = new StringBuilder();
+                var rowText = new StringBuilder();
 
-                using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
+                using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
                     foreach (ExcelWorksheet worksheet in package.Workbook.Worksheets)
                     {
@@ -89,7 +84,7 @@ namespace OCRTextReader
 
                         for (int row = 1; row <= rowCount; row++)
                         {
-                            StringBuilder rowText = new StringBuilder();
+                            rowText.Clear();
                             bool hasData = false;
 
                             for (int col = 1; col <= colCount; col++)
@@ -105,15 +100,11 @@ namespace OCRTextReader
                                     }
                                 }
                                 if (col < colCount)
-                                {
-                                    rowText.Append("\t");
-                                }
+                                    rowText.Append('\t');
                             }
 
                             if (hasData)
-                            {
                                 text.AppendLine(rowText.ToString().TrimEnd());
-                            }
                         }
 
                         text.AppendLine();
@@ -132,44 +123,30 @@ namespace OCRTextReader
         {
             try
             {
-                string extension = Path.GetExtension(filePath).ToLowerInvariant();
-                
-                // OpenXML only supports .pptx format, not .ppt
-                if (extension == ".ppt")
-                {
+                if (Path.GetExtension(filePath).ToLowerInvariant() == ".ppt")
                     throw new NotSupportedException("Legacy .ppt format is not supported. Please convert to .pptx format.");
-                }
 
-                StringBuilder text = new StringBuilder();
+                var text = new StringBuilder();
 
-                using (PresentationDocument presentationDoc = PresentationDocument.Open(filePath, false))
+                using (var presentationDoc = PresentationDocument.Open(filePath, false))
                 {
                     if (presentationDoc.PresentationPart == null)
-                    {
                         return string.Empty;
-                    }
-
-                    var presentationPart = presentationDoc.PresentationPart;
-                    var slideParts = presentationPart.SlideParts;
 
                     int slideNumber = 1;
-                    foreach (var slidePart in slideParts)
+                    foreach (var slidePart in presentationDoc.PresentationPart.SlideParts)
                     {
                         text.AppendLine($"--- Slide {slideNumber} ---");
 
                         if (slidePart.Slide != null)
                         {
-                            var slide = slidePart.Slide;
-                            var textElements = slide.Descendants<DocumentFormat.OpenXml.Drawing.Text>();
+                            var textElements = slidePart.Slide
+                                .Descendants<DocumentFormat.OpenXml.Drawing.Text>()
+                                .Select(t => t.Text)
+                                .Where(t => !string.IsNullOrWhiteSpace(t));
 
-                            foreach (var textElement in textElements)
-                            {
-                                string textContent = textElement.Text;
-                                if (!string.IsNullOrWhiteSpace(textContent))
-                                {
-                                    text.AppendLine(textContent);
-                                }
-                            }
+                            foreach (var textContent in textElements)
+                                text.AppendLine(textContent);
                         }
 
                         text.AppendLine();
@@ -190,4 +167,3 @@ namespace OCRTextReader
         }
     }
 }
-
