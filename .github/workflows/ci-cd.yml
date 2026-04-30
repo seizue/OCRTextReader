@@ -74,7 +74,7 @@ jobs:
         $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
         Write-Host "ISCC exists: $(Test-Path $iscc)"
         & $iscc /DMyAppVersion="$version" "Setup\setup.iss"
-        Write-Host "Exit code: $LASTEXITCODE"
+        if ($LASTEXITCODE -ne 0) { throw "ISCC failed with exit code $LASTEXITCODE" }
         Write-Host "=== installer-output contents ==="
         Get-ChildItem "installer-output" -ErrorAction SilentlyContinue | Select-Object Name
         echo "VERSION=$version" >> $env:GITHUB_ENV
@@ -85,14 +85,12 @@ jobs:
         $outDir = "release-assets"
         New-Item -ItemType Directory -Path $outDir | Out-Null
 
-        Write-Host "=== Searching for setup exe ==="
-        Get-ChildItem -Path . -Filter "*setup*.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
-
         $installer = "installer-output\OCRTextReader-$version-setup.exe"
+        Write-Host "Looking for: $installer"
+        if (-not (Test-Path $installer)) { throw "Installer not found at $installer" }
+
         Copy-Item $installer "$outDir\OCRTextReader-$version-setup.exe"
-
         Compress-Archive -Path "bin\Release\net48\*" -DestinationPath "$outDir\OCRTextReader-$version.zip"
-
         echo "OUT_DIR=$outDir" >> $env:GITHUB_ENV
 
     - name: Sign executable
